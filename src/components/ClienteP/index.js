@@ -25,7 +25,8 @@ const ClienteP = () => {
         plano: '',
         ramais: '',
         dataEmp: '',   
-        link: '' 
+        link: '',
+        state: 'criarEmpresa'
     });    
 
     const inputValue = (e) => {
@@ -51,12 +52,16 @@ const ClienteP = () => {
       } 
 
     const getEmpresas = () => {
-        fetch(`https://agendphp.herokuapp.com/index.php/empresas`,{
-            method: "GET",
+      const input = {
+        state: 'empresas'
+      } 
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }        
+            },
+              body: JSON.stringify({input})         
             })
             .then((response) => response.json())
             .then((responseJson) => {
@@ -64,23 +69,24 @@ const ClienteP = () => {
             }).catch((error)=>{                
                 console.log(error);
             })                
-    } 
+    }
 
     const getFilter = (e) => {
       var dataI = document.getElementById('inputInicialEmp').value; 
       var dataF = document.getElementById('inputFinalEmp').value; 
-      const filtroTeste = {
+      const filtroAgend = {
         dataInicial: dataI,
-        dataFinal: dataF
+        dataFinal: dataF,
+        state: 'filterEmp'
       }     
       e.preventDefault();
-        fetch(`https://agendphp.herokuapp.com/index.php/filtroEmpresa`,{
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-                body: JSON.stringify({filtroTeste})         
+                body: JSON.stringify({filtroAgend})         
             })
             .then((response) => response.json())
             .then((responseJson) => {
@@ -91,7 +97,7 @@ const ClienteP = () => {
     }  
 
     const cadProduct = async () =>{          
-            await fetch("https://agendphp.herokuapp.com/index.php/criarEmpresa",{ 
+            await fetch("https://agendphp.herokuapp.com/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

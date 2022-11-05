@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './style.css';
 
 const UpdateEmpresa = (props) => { 
@@ -8,13 +8,16 @@ const UpdateEmpresa = (props) => {
 
     const[input, setInput] = useState([]);
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setInput(values => ({...values, state: 'updateEmpresa', id: 'id', [name]: value}));
+        setInput(values => ({...values, state: 'upEmp', idup: id, [name]: value}));
     }
 
-    const updateEmpresa = async () =>{         
+    const updateEmpresa = async (e) =>{
+      e.preventDefault();        
               await fetch(`https://agendphp.herokuapp.com/index.php`,{ 
               method: "PUT",
               headers: {
@@ -25,19 +28,24 @@ const UpdateEmpresa = (props) => {
               })
               .then((response) => response.json())
               .then((responseJson) => {
-                //console.log(responseJson);
+                navigate('/addcliente');
               }).catch((err)=>{                
-                  console.log(err);
-              })                         
+                console.log(err);
+              })                          
       }
 
     useEffect(() => {   
-      fetch(`https://agendphp.herokuapp.com/index.php/empresa/${id}`,{
-        method: "GET",
+      const input = {
+        state: 'empresa',
+        idup: id
+      }
+      fetch(`https://agendphp.herokuapp.com/index.php`,{
+        method: "POST",
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
-        }    
+        },
+          body: JSON.stringify({input})         
         })
         .then((response) => response.json())
         .then((responseJson) => { 

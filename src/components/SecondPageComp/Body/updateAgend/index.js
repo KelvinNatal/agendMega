@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateAgend = (props) => { 
 
     const {id} = useParams();
-    const[input, setInput] = useState([]);    
+    const[input, setInput] = useState([]);   
+    
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setInput(values => ({...values, [name]: value}));
+        setInput(values => ({...values, state: 'upAgend', idup: id, [name]: value}));
     }
 
     const updateProduct = async (e) =>{ 
         e.preventDefault();        
-              await fetch(`http://localhost/final/index.php/updateAgendamento/${id}`,{ 
+              await fetch(`https://agendphp.herokuapp.com/index.php`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -24,19 +26,24 @@ const UpdateAgend = (props) => {
               })
               .then((response) => response.json())
               .then((responseJson) => {
-                //console.log(responseJson);
+                navigate('/addproduct');
               }).catch((err)=>{                
-                  console.log(err);
+                console.log(err);
               })                         
       }
 
-    useEffect(() => {   
-        fetch(`https://agendphp.herokuapp.com/index.php/agendamento/${id}`,{
-            method: "GET",
+    useEffect(() => {
+        const input = {
+            state: "agendamento",
+            idup: id
+        }   
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }    
+            },
+                body: JSON.stringify({input})         
             })
             .then((response) => response.json())
             .then((responseJson) => { 

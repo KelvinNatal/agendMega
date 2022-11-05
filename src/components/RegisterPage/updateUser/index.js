@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './style.css';
 
 const UpdateUser = (props) => { 
+
+    const navigate = useNavigate();
 
     const {id} = useParams();
 
@@ -11,11 +13,12 @@ const UpdateUser = (props) => {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setInput(values => ({...values, [name]: value}));
+        setInput(values => ({...values, state:'upUser', idup: id, [name]: value}));
     }
 
-    const updateUsuario = async () =>{       
-              await fetch(`https://agendphp.herokuapp.com/index.php/updateUsuario/${id}`,{ 
+    const updateUsuario = async (e) =>{     
+      e.preventDefault();   
+              await fetch(`https://agendphp.herokuapp.com/index.php`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -25,27 +28,32 @@ const UpdateUser = (props) => {
               })
               .then((response) => response.json())
               .then((responseJson) => {
-                //console.log(responseJson);
+                navigate('/register');
               }).catch((err)=>{                
                   console.log(err);
               })                         
       }
 
-    useEffect(() => {   
-      fetch(`https://agendphp.herokuapp.com/index.php/usuario/${id}`,{
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }    
-        })
-        .then((response) => response.json())
-        .then((responseJson) => { 
-          setInput(responseJson.usuario[0]);                           
-        }).catch((error)=>{                
-            console.log(error);
-        })  
-    }, [id]) 
+      useEffect(() => { 
+        const input = {
+          state: 'usuario',
+          idup: id
+        }
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+            body: JSON.stringify({input})         
+          })
+          .then((response) => response.json())
+          .then((responseJson) => { 
+            setInput(responseJson.usuario[0]);                           
+          }).catch((error)=>{                
+             console.log(error);
+          }) 
+        }, [id])
 
     return(
         <>

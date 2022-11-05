@@ -16,7 +16,8 @@ const Register = () => {
     const [user, setUser] = useState({
         username: '',
         password: '',
-        cargo: ''      
+        cargo: '',
+        state: 'registrar'
     }); 
 
     const handleClose = () => {
@@ -40,17 +41,26 @@ const Register = () => {
     const navigate = useNavigate();
 
     const getUsers = async () => {
-        await fetch("https://agendphp.herokuapp.com/index.php/usuarios", {
-            method: "GET"
-        })
+        const user = {
+            state: 'usuarios'
+        }
+        await fetch("https://agendphp.herokuapp.com/index.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+                body: JSON.stringify({user})         
+            })
         .then((response) => response.json())
         .then((responseJson) => {
+            console.log(responseJson);
             setUsers(responseJson.listaUsuarios);
         });
     };
 
     const cadUsuario = async () =>{                   
-            await fetch("https://agendphp.herokuapp.com/index.php/registrar",{ 
+            await fetch("https://agendphp.herokuapp.com/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
