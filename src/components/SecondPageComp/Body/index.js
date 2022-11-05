@@ -22,7 +22,8 @@ const Body = () => {
         horario: '',
         status: '',
         analista: '',
-        observacao: ''     
+        observacao: '',
+        state: 'criarAgendamento'     
     });    
 
     const [status, setStatus] = useState({
@@ -52,12 +53,14 @@ const Body = () => {
         setShow(true);
 
       }
-    
-    var obj = JSON.parse(sessionStorage.getItem('userData'));
-      
+
+      var dataI;
+      var dataF; 
+   
+
     const getFilter = () => {
-      var dataI = document.getElementById('inputInicial').value; 
-      var dataF = document.getElementById('inputFinal').value; 
+       dataI = document.getElementById('inputInicial').value; 
+       dataF = document.getElementById('inputFinal').value; 
       const filtroAgend = {
         dataInicial: dataI,
         dataFinal: dataF,
@@ -83,7 +86,7 @@ const Body = () => {
 
     const cadProduct = async (e) =>{ 
       e.preventDefault();        
-            await fetch("https://agendphp.herokuapp.com/index.php/criarAgendamento",{ 
+            await fetch("http://localhost/final/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -115,41 +118,12 @@ const Body = () => {
         window.location.reload();          
       })
     }
+        
+  var obj = JSON.parse(sessionStorage.getItem('userData'));   
 
-    const getAgendamentos = () => {
-      const userRel = {
-        username: obj.userData.username,
-        cargo: obj.userData.cargo,
-        state: 'agendamentos'
-      }     
-        fetch(`http://localhost/final/index.php`,{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-                body: JSON.stringify({userRel})         
-            })
-            .then((response) => response.json())
-            .then((responseJson) => { 
-              if(obj.userData.cargo === "Admin"){
-                 setProducts(responseJson.listaAgendamentos);  
-              }else{
-                 setProducts(responseJson.listaUseragend);
-              }                     
-            }).catch((error)=>{                
-              console.log(error);
-            }) 
-    }
-
-    useEffect(() => {
-      getAgendamentos();
-    }, []);
-    useEffect(() => {
-      getFilter();
-    }, []);
-    
-   /*useEffect(() => {   
+    useEffect(() => {   
+       var dataI = document.getElementById('inputInicial').value; 
+       var dataF = document.getElementById('inputFinal').value; 
       const userRel = {
         username: obj.userData.username,
         cargo: obj.userData.cargo,
@@ -166,15 +140,17 @@ const Body = () => {
             .then((response) => response.json())
             .then((responseJson) => { 
               console.log(responseJson)
-              if(obj.userData.cargo === "Admin"){
-                 setProducts(responseJson.listaAgendamentos);  
-              }else{
-                 setProducts(responseJson.listaUseragend);
-              }                     
+              if(dataI === "" || dataF === ""){
+                if(obj.userData.cargo === "Admin"){
+                  setProducts(responseJson.listaAgendamentos);  
+                }else{
+                  setProducts(responseJson.listaUseragend);
+                }            
+            }         
             }).catch((error)=>{                
               console.log(error);
             })     
-    }, [obj])*/
+    }, [obj]) 
 
     useEffect(() => {
         if(sessionStorage.getItem('userData') !== null){            
@@ -219,7 +195,6 @@ const Body = () => {
              </Modal.Header>
             <Modal.Body className="modd">
             <div className="">
-            <form id="product_form" onSubmit={cadProduct}>
         <div className='dataHora' >
             <div className="item">
                 <p>Data/Horário</p>
@@ -265,9 +240,8 @@ const Body = () => {
         <h4>Observação</h4>
         <textarea rows="4" name="observacao" onChange={inputValue}></textarea>
         <div className="btn-block">
-          <button type="submit" className="botaoForm">Agendar</button>
+          <button onClick={cadProduct} className="botaoForm">Agendar</button>
         </div>    
-        </form>
     </div>
             </Modal.Body>
             </Modal>

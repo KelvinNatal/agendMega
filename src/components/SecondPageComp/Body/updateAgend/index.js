@@ -4,11 +4,7 @@ import { useParams } from "react-router-dom";
 const UpdateAgend = (props) => { 
 
     const {id} = useParams();
-
-    console.log(id);
-    const[input, setInput] = useState([]);
-
-    
+    const[input, setInput] = useState([]);    
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -18,7 +14,7 @@ const UpdateAgend = (props) => {
 
     const updateProduct = async (e) =>{ 
         e.preventDefault();        
-              await fetch(`https://agendphp.herokuapp.com/index.php/updateAgendamento/${id}`,{ 
+              await fetch(`http://localhost/final/index.php/updateAgendamento/${id}`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
