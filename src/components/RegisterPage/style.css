@@ -1,0 +1,252 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.todoConteudoRegister{
+        background-color: rgb(233, 230, 230);
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+}
+
+.conjuntoUser{
+    margin-top: -100px;
+    width: 85vw;
+    margin-left: 10vw;
+    z-index: 1;
+}
+
+.btnUser{
+  width: 40px;
+  height: 40px;
+  background: rgb(41, 41, 248);
+  margin-left: 5px;
+  color: white;
+  padding-top: 5px;
+  margin-bottom: 28px;
+  border-radius: 25px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 14pt;
+  box-shadow: 0px -10px 30px -2px rgb(182, 181, 181, .4);
+  z-index: 0;
+  cursor: pointer;
+}
+
+.btnUser:hover{
+    background: rgb(2, 2, 202);
+}
+
+.UsersDiv{
+    display: flex;
+    width: 100%;
+    height: 74vh;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 3vw;
+    overflow-y: scroll;
+    z-index: 2;
+    border-radius: 25px;
+}
+
+.UsersDiv::-webkit-scrollbar{
+    width: 8px; 
+    display: none; 
+}
+
+.UsersDiv::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 25px;         /* color of the tracking area */
+}
+  
+.UsersDiv::-webkit-scrollbar-thumb {
+    background-color: rgb(177, 177, 177);    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+}
+
+.UsersDiv::before {
+    content: "";
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 12px;
+    width: 84vw;
+    height: 74vh;
+    background: rgb(156, 156, 156);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .fontTable{
+    font-size: 14pt;
+  }
+
+.boxReg{
+    border-radius: 20px;
+    margin: 0 auto;
+    color: black;
+}
+
+.inputsLogin{
+    margin-top: 35px;
+}
+
+.inpute{
+    margin: 0 auto;
+    width: 80%;
+    height: 70%;
+}
+
+#inputeId{
+    margin-bottom: 4%;
+}
+
+.campos{
+    margin: 0 auto;
+    width: 80%;
+    height: 70%;
+    padding-bottom: 10px;
+
+}
+
+.btnLogin{
+    border-radius: 8px;
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: bold;
+}
+
+.logoContainer{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    width: 320px;
+    height: 230px;
+    margin-bottom: 10px;
+}
+
+.imagem{
+    width: 150px;
+    height: 150px;
+}
+
+#title{
+    font-weight: bold;
+    margin-top: -25px;
+    font-size: 17pt;
+}
+
+#subTitle{
+    font-size: 14pt; 
+    margin-top: -8px;
+}
+
+.logoTitle{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.inputsRegis{
+    margin: 10vh auto;
+}
+
+.regMod{
+    width: 30vw;
+    height: 330px;
+    margin: 10vh auto;
+}
+
+.userCard{
+    width: 16%;
+    height: 50%;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 70px;
+}
+
+.userCard::before {
+    content: "";
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 12px;
+    width: 89%;
+    height: 91%;
+    background: rgb(156, 156, 156);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+.bodyC{
+    text-align: center;
+    font-size: 15pt;
+}
+.userIcon{
+    width: 8vw;
+    height: 8vh;
+    margin: 25px auto;
+}
+
+.titleCard{
+    text-align: center;
+    border-bottom: 1px solid rgba(218, 217, 217, 0.774);
+    padding-bottom: 10px;
+}
+
+.userTitle{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.bottomCard{
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    border-top: 1px solid rgba(218, 217, 217, 0.774);
+    height: 100%;
+}
+.opcoesUser{
+    width: 100%;
+    height: 100%;
+}
+
+.link{
+    padding: 0px;
+    margin: 0 auto;
+    margin-right: -55px;
+}
+
+.buttonsUser{
+  width: 25px;
+  background-color: #ececec;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1px;
+  padding: 2px;
+  border: none;
+  margin: 8px auto;
+}
+
+#bt1ApagUser{
+    background-color: rgb(226, 45, 45);
+}
+  
+
+#bu1:hover{
+    background-color: rgb(185, 5, 5);
+  }
+  
+  #bu2{
+  background: rgb(41, 41, 248);
+  }
+  
+  #bu2:hover{
+    background: rgb(3, 3, 177);
+    }
+  
+  #bu3{
+    background: rgb(34, 34, 34);
+  }

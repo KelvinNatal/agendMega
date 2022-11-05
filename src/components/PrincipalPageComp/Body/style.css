@@ -1,0 +1,406 @@
+.container{
+    margin-top: 2%;
+}
+
+.top{
+    margin-bottom: -20px;
+}
+
+Header{
+    width: 100%;
+}
+
+.cont{
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+
+.todoConteudo{
+    padding-top: 100px;
+    overflow-x: hidden;
+    width: 100vw;
+    white-space: nowrap;
+}
+
+.product{
+    color:black;
+    margin-bottom: -3px;
+}
+
+.brand{
+    color: black;
+    font-size: 18pt;
+    font-style: bold;
+}
+
+.button{
+    margin-right: 5px;
+}
+
+
+.hr-weigh{
+    color: black;
+    width: 83.2%;
+}
+
+.container{
+   width: 100%;
+}
+
+.width{
+    margin-bottom: 50px;
+}
+
+.card{
+    margin-top: -20px;
+    padding-top: 10px;
+
+}
+
+.width{
+    text-align: center;
+}
+
+.check{
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.card-text{
+    margin-bottom: 0px;
+}
+
+.product{
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.topo{
+    margin: 0 auto;
+}
+
+.conjuntoTreinamentos{
+    text-align: center;
+    justify-content: center;
+}
+
+.dashCard{
+    width: 20vw;
+    height: 150px;
+    border-radius: 15px;
+    margin-top: 4px;
+    margin-right: 25px;
+}
+
+.tituloCard{
+    float: right;
+    margin-right: 15px;
+    font-size: 22pt;
+    margin-bottom: 10px;
+    margin-top: 45px;
+}
+
+.tituloCard, .subtitleCard{
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+    
+}
+
+.subtitleCard{
+    margin-top: 5px;
+    font-size: 18pt;
+}
+
+
+#firstCard{
+    background: rgb(195,34,34);
+    background: linear-gradient(87deg, rgba(195,34,34,1) 0%, rgba(253,146,45,1) 92%);
+    filter: opacity(85%);
+    z-index: 2;
+}
+  
+#firstCard::before {
+    content: "";
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 19.4vw;
+    height: 152px;
+    background: linear-gradient(87deg, rgba(195,34,34,1) 0%, rgba(253,146,45,1) 92%);
+    z-index: -1;
+    filter: blur(10px);
+    border-radius: 25px;
+  }
+
+#secondCard{
+    background: rgb(45,60,253);
+    background: linear-gradient(63deg, rgba(45,60,253,1) 0%, rgba(195,34,172,1) 100%);
+    filter: opacity(85%);
+    z-index: 2;
+}
+
+#secondCard::before {
+    content: "";
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 19.4vw;
+    height: 152px;
+    background: linear-gradient(63deg, rgba(45,60,253,1) 0%, rgba(195,34,172,1) 100%);
+    z-index: -1;
+    filter: blur(10px);
+    border-radius: 25px;
+  }
+
+#thirdCard{
+    background: rgb(253,244,45);
+    background: linear-gradient(63deg, rgba(253,244,45,1) 0%, rgba(34,195,169,1) 100%);
+    filter: opacity(85%);
+    z-index: 2;
+}
+
+#thirdCard::before {
+    content: "";
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 19.4vw;
+    height: 152px;
+    background: linear-gradient(63deg, rgba(253,244,45,1) 0%, rgba(34,195,169,1) 100%);
+    z-index: -1;
+    filter: blur(10px);
+    border-radius: 25px;
+  }
+
+#lastCard{
+    margin-right: 0px;
+    background: rgb(253,45,241);
+    background: linear-gradient(63deg, rgba(253,45,241,1) 0%, rgba(195,34,34,1) 100%);
+    filter: opacity(85%);
+    z-index: 2;
+}
+
+#lastCard::before {
+    content: "";
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 152px;
+    background: linear-gradient(63deg, rgba(253,45,241,1) 0%, rgba(195,34,34,1) 100%);
+    z-index: -1;
+    filter: blur(10px);
+    border-radius: 25px;
+  }
+
+  #lastCard::before {
+    width: 19.1vw;
+  }
+
+.dashDiv{
+    width: 85vw;
+    height: 35vh;
+    border-radius: 20px;
+
+}
+
+.conjuntoTotal{
+    width: 85vw;
+    margin-left: 10vw;
+}
+
+#buttonDash{
+    width: 200px;
+    height: 6vh;
+    position: absolute;
+    background-color: #fff;
+    float: left;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    padding-top: 12px;
+    margin-top: 2px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    cursor: pointer;
+    box-shadow: 0px -10px 30px -2px rgb(182, 181, 181, .4);
+    z-index: 0;
+}
+
+#buttonDash:hover{
+    background-color: rgb(238, 236, 236);
+}
+
+.agendamentosDiv{
+        display: flex;
+        width: 74.5%;
+        height: 58vh;
+        float: left;
+        background-color: #fff;
+        margin: 0 auto;
+        margin-top: -5vh;
+        overflow-y: scroll;
+        z-index: 2;
+        border-radius: 10px;
+}
+
+.agendamentosDiv::-webkit-scrollbar{
+    width: 8px;  
+    display: none;
+}
+
+.agendamentosDiv::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 25px;         /* color of the tracking area */
+}
+  
+.agendamentosDiv::-webkit-scrollbar-thumb {
+    background-color: rgb(177, 177, 177);    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+}
+
+.agendamentosDiv::before {
+    content: "";
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 12px;
+  width: 62.2vw;
+  height: 57.5vh;
+  background: rgb(156, 156, 156);
+  z-index: -1;
+  filter: blur(20px);
+  }
+
+.agendRows:hover{
+    background-color: rgb(235, 232, 232);
+}
+
+.filtroDivDash{
+    width: 19vw;
+    float: left;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: -5vh;
+    margin-left: 28px;
+    overflow-y: scroll;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  
+  .filtroDivDash::-webkit-scrollbar{
+    display: none;  
+  }
+  
+  .filtroDivDash::before {
+    content: "";
+    position: absolute;
+    margin-top: 9px;
+    width: 17.5vw;
+    margin-left: 15px;
+    height: 70px;
+    background: rgb(156, 156, 156);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .titleTable{
+    background-color: aqua;
+  }
+
+  .tudoCardDash{
+    width: 99.5%;
+  }
+  
+  .cabecalhoCardDash{
+    width: 99.5%;
+    height: 38px;
+    position: relative;
+    margin-left: 5px;
+  }
+  
+  .agendCardDash{
+    width: 99.5%;
+    height:60px; 
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .agendCardDash:hover{
+    background-color: #e4e1e1;
+  }
+  
+
+  
+.cabeEmpDash, .cabeCliDash, .cabeTelDash, .cabeDatDash, .cabeHorDash, .cabeStaDash, .cabeAnaDash, .cabeObsDash, .cabeOpc{
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+  
+  .empresaDivDash, .clienteDivDash, .telefoneDivDash, .dataDivDash, .horarioDivDash, .statusDivDash, .analistaDivDash, .obsDivDash, .opcoesDiv{
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .empresaDivDash, .cabeEmpDash{
+    width: 13%;
+    height: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;  
+  }
+  .clienteDivDash, .cabeCliDash{
+    width: 14%;
+    height: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;  
+  }
+  .telefoneDivDash, .cabeTelDash{
+    width: 12%;
+    height: 100%; 
+  }
+  .dataDivDash, .cabeDatDash{
+    width: 13%;
+    height: 100%; 
+  }
+  .horarioDivDash, .cabeHorDash{
+    width: 10%;
+    height: 100%;
+  }
+  .statusDivDash, .cabeStaDash{
+    width: 9%;
+    height: 100%;  
+  }
+  .analistaDivDash, .cabeAnaDash{
+    width: 14%;
+    height: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+
+  .obsDivDash, .cabeObsDash{
+    width: 11%;
+    height: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+  
+
+  #bt1Apag{
+    border: none;
+    background-color: rgb(226, 45, 45);
+    padding-bottom: 2px;
+  }
+
+  #bt1Apag:hover{
+    background-color: rgb(185, 5, 5);
+  }
+

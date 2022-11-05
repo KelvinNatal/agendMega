@@ -1,0 +1,742 @@
+.todoExemplo{
+  /*background-color: rgb(233, 230, 230);***/
+  width: 100%;
+}
+
+.todoConteudoCli{
+  background-color: rgb(233, 230, 230);
+  width: 100vw;
+}
+
+.conjuntoCli{
+  width: 85vw;
+  height: 100vh;
+  margin-left: 10vw;
+  z-index: 1;
+}
+
+.top{
+  margin-bottom: -20px;
+  padding-left: 108px;
+}
+
+.cont{
+  width: 85%;
+}
+
+.container{
+  width: 85%;
+}
+
+.all{
+}
+
+.buttons{
+  margin-right: 162px;
+}
+
+.text{
+  margin-top: -5px; 
+}
+
+.inputForm{
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+.labelForm{
+  margin-right: 50px;
+}
+
+
+.titleForms{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+.inputSku, .inputName, .inputPrice{
+    margin-left: 50px;
+    width: 200px;
+    height:50%
+}
+
+.inputName{
+    margin-left: 35px
+}
+
+.inputPrice{
+    margin-left: 25px
+}
+
+.txtType{
+    padding-right: 15px;
+}
+
+.forms{
+  width: 100%;
+}
+
+.botaoForm{
+  width: 250px;
+  background: rgb(41, 41, 248);
+  height: 6.3vh;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  border: none;
+
+}
+
+.botaoForm:hover{
+  background: rgb(2, 2, 202);
+}
+
+
+.btnAgend{
+  width: 40px;
+  height: 40px;
+  background: rgb(41, 41, 248);
+  color: white;
+  padding-top: 5px;
+  border-radius: 25px;
+  margin-top: -5px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 14pt;
+  box-shadow: 0px -10px 30px -2px rgb(182, 181, 181, .4);
+  z-index: 0;
+  cursor: pointer;
+}
+
+.btnAgend:hover{
+  background: rgb(2, 2, 202);
+}
+
+.btnPesquisa{
+  width: 40px;
+  height: 40px;
+  background: rgb(41, 41, 248);
+  color: white;
+  padding-top: 5px;
+  border-radius: 25px;
+  margin-top: -5px;
+  position: relative;
+  margin-left: 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 14pt;
+  box-shadow: 0px -10px 30px -2px rgb(182, 181, 181, .4);
+  z-index: 0;
+  cursor: pointer;
+}
+
+.btnPesquisa:hover{
+  background: rgb(2, 2, 202);
+}
+
+.addIcons{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.icon{
+}
+
+/*Pesquisa Personalizada*/
+.pesquisaFiltro{
+  top: 50%;
+  left: 2%;
+  margin-top: -5px;
+  margin-left: 10px;
+  transform: translate(-50%,-50%);
+  transition: all 0.5s;
+  transform: scaleX(-1);
+  width: 40px;
+  height: 40px;
+  background: rgb(41, 41, 248);
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid rgb(41, 41, 248);
+}
+
+#inputFiltro{
+  position: absolute;
+  transform: scaleX(-1);
+  top: 0;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+.fa{
+  box-sizing: border-box;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  border-radius: 50%;
+  color: #fcfcfc;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.pesquisaFiltro:hover,
+.pesquisaFiltro:valid{
+  width: 250px;
+  cursor: pointer;
+}
+
+.pesquisaFiltro:hover #inputFiltro,
+.pesquisaFiltro:valid #inputFiltro{
+  display: block;
+  padding-left: 40px;
+}
+
+.pesquisaFiltro:hover .fa,
+.pesquisaFiltro:valid .fa{
+  background: #07051a;
+  color: white;
+  margin-top: 1px;
+}
+
+
+.btnPesquisa:valid a {
+display: block;
+}
+
+/*-------------*/
+
+.addCliDiv{
+  display: flex;
+  width: 78%;
+  height: 77vh;
+  float: left;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 15px;
+  overflow-y: scroll;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.addCliDiv::-webkit-scrollbar{
+  width: 8px;
+  display: none;  
+}
+
+.addCliDiv::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  border-radius: 25px;         /* color of the tracking area */
+}
+
+.addCliDiv::-webkit-scrollbar-thumb {
+  background-color: rgb(177, 177, 177);    /* color of the scroll thumb */
+  border-radius: 25px;       /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+}
+
+.addCliDiv::before {
+  content: "";
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 12px;
+  width: 65.1vw;
+  height: 74vh;
+  background: rgb(156, 156, 156);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+
+.filtroDiv{
+  width: 17vw;
+  float: left;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-left: 20px;
+  overflow-y: scroll;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.filtroDiv::-webkit-scrollbar{
+  display: none;  
+}
+
+.filtroDiv::before {
+  content: "";
+  position: absolute;
+  margin-top: 9px;
+  width: 15vw;
+  margin-left: 15px;
+  height: 32vh;
+  background: rgb(156, 156, 156);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.mod{
+  width: 50vw;
+  height: 80vh;
+  margin: 10vh auto;
+}
+
+.modd::-webkit-scrollbar{
+  width: 8px;  
+}
+
+.modd::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  border-radius: 25px;         /* color of the tracking area */
+}
+
+.modd::-webkit-scrollbar-thumb {
+  background-color: rgb(177, 177, 177);    /* color of the scroll thumb */
+  border-radius: 25px;       /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+}
+
+.botoesModal{
+  float: right;
+  margin-top: 38vh;
+  margin-right: -75px;
+  
+}
+
+.botaoSalvar{
+  margin-left: 10px;
+}
+
+.serror{
+  margin-left: 20px;
+  font-weight: bold;
+  font-size:12;
+  color: red;
+}
+
+#horario{
+  width: 30%;
+  height: 35px;
+  margin-top: 8px;
+  padding: 0px;
+}
+
+.cabeButtons{
+  width: 85vw;
+  height: 4vh;
+  margin-top: 100px;
+}
+
+.btnFiltro{  
+  width: 85%;
+  height: 40px;
+  background: rgb(37, 37, 37);
+  text-align: center;
+  padding-top: 6px;
+  color: white;
+  border-radius: 13px;
+  margin: 15px auto;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+/* Filtro */
+
+.tituloFiltro{
+  margin-top: 20px;
+  margin-left: 1.25vw;
+  margin-bottom: -10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+.subtituloFiltro{
+  margin-top: 10px;
+  margin-bottom: -25px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  margin-left: 1.25vw;
+}
+.select {
+  position: relative;
+  display: inline-block;
+  width: 85%;
+}    .select select {
+      margin: 0 1.25vw;
+      font-family: 'Arial';
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 15px;
+      outline: 0;
+      border: 1px solid #dad7d7;
+      border-radius: 15px;
+      background: #f7f5f5;
+      color: #aaa7a7;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+      .select select::-ms-expand {
+          display: none;
+      }
+      .select select:hover,
+      .select select:focus {
+          color: #000000;
+          background: #ececec;
+      }
+      .select select:disabled {
+          opacity: 0.4;
+          pointer-events: none;
+          
+      }
+.select_arrow {
+  position: absolute;
+  top: 16px;
+  right: 5px;
+  width: 0px;
+  height: 0px;
+  border: solid #b1aeae;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #888787;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
+  
+}
+
+.inputFiltroDiv{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 15px;
+  margin-bottom: 30px;
+}
+
+.calendarIcon{
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  z-index: 1;
+  right: -10px;
+}
+
+#calendarI{
+  right: -10px;
+  top: 10px;
+}
+
+#calendarF{
+  bottom: 92px;
+}
+
+.botaoFiltro{
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  color: #f7f5f5;
+  margin-left: 52%;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  border: none;
+  background: rgb(37, 37, 37);
+}
+
+.botaoFiltro:hover{
+  background: rgb(10, 10, 10);
+}
+
+.filterIcons{
+  width: 22px;
+  height: 22px;
+  color: white;
+  margin-bottom: 1px;
+  margin-left: 1px;
+}
+
+.inputF{
+  margin: 0 1.25vw;
+  font-family: 'Arial';
+  width: 100%;
+  padding: 10px 15px;
+  outline: 0;
+  border: 1px solid #dad7d7;
+  border-radius: 15px;
+  background: #f7f5f5;
+  color: #aaa7a7;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  z-index: 2;
+}
+
+#inputF::-webkit-calendar-picker-indicator {
+  right: 35%;
+}
+
+/* Formulario */
+  h1 {
+  margin: 15px 0;
+  font-weight: 400;
+  }
+  h4 {
+  margin-bottom: 4px;
+  }
+  .testbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 3px;
+  }
+  input, select, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  }
+  input {
+  width: calc(100% - 10px);
+  padding: 5px;
+  }
+  input:hover, textarea:hover, select:hover {
+  outline: none;
+  border: 1px solid #095484;
+  }
+  select {
+  padding: 7px 0;
+  background: transparent;
+  }
+  textarea {
+  margin-bottom: 3px;
+  }
+  .item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  margin-left: 10px;
+  }
+  input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  }
+  .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  font-size: 20px;
+  color: #a9a9a9;
+  }
+  .item i {
+  left: 94%;
+  top: 30px;
+ z-index: 1;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+  left: 93%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+  }
+  .street, .desired-outcome-item, .complaint-details-item {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .street input {
+  margin-bottom: 10px;
+  }
+  small {
+  display: block;
+  line-height: 16px;
+  opacity: 0.7;
+  }
+  .btn-block {
+  margin-top: 20px;
+  text-align: center;
+  }
+  @media (min-width: 568px) {
+  input {
+  width: calc(35% - 20px);
+  margin: 0 0 0 8px;
+  }
+  select {
+  width: calc(50% - 8px);
+  margin: 0 0 10px 8px;
+  }
+  .item {
+  flex-direction: row;
+  align-items: center;
+  }
+  .item p {
+  width: 30%;
+  }
+  .item i {
+  left: 59%;
+  top: 30%;
+  }
+  #dateCalendar::-webkit-calendar-picker-indicator {
+  left: 58%;
+  }
+  .street, .desired-outcome-item, .complaint-details-item {
+  width: 70%;
+  }
+  .street input {
+  width: calc(50% - 20px);
+  }
+  .street .street-item {
+  width: 100%;
+  }
+  .address p, .desired-outcome p, .complaint-details p {
+  align-self: flex-start;
+  margin-top: 6px;
+  }
+  .desired-outcome-item, .complaint-details-item {
+  margin-left: 12px;
+  }
+  textarea {
+  width: calc(100% - 6px);
+  }
+  }
+
+.tudoCard{
+  position: absolute;
+  width: 100%;
+}
+
+.cabecalhoCard{
+  width: 65.8%;
+  height: 38px;
+  position: relative;
+  margin-left: 4px; 
+}
+
+.agendCard{
+  width: 65.8%;
+  height:60px;
+  margin-left: 4px;  
+  position: relative;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.agendCard:hover{
+  background-color: #e4e1e1;
+}
+
+.cabeEmp, .cabeCli, .cabeTel, .cabeDat, .cabeHor, .cabeSta, .cabeAna, .cabeObs, .cabeOpcEmp{
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+.empresaDiv, .clienteDiv, .telefoneDiv, .comercialDiv, .produtoDiv, .planoDiv, .ramaisDiv, .dataDiv, .opcoesDivEmp{
+  text-align: center;
+  padding: 15px 0;
+}
+
+.empresaDiv, .cabeEmp{
+  width: 11%;
+  height: 100%; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  margin-left: 5px;
+}
+.clienteDiv, .cabeCli{
+  width: 12%;
+  height: 100%; 
+}
+.telefoneDiv, .cabeTel{
+  width: 12%;
+  height: 100%; 
+}
+.comercialDiv, .cabeDat{
+  width: 10%;
+  height: 100%; 
+}
+.produtoDiv, .cabeHor{
+  width: 10%;
+  height: 100%;
+}
+.planoDiv, .cabeSta{
+  width: 11%;
+  height: 100%;
+}
+.ramaisDiv, .cabeAna{
+  width: 11%;
+  height: 100%;
+}
+.dataDiv, .cabeObs{
+  width: 11%;
+  height: 100%;
+}
+
+.opcoesDivEmp, .cabeOpcEmp{
+  width: 13%;
+  height: 100%;
+}
+
+.opcButtonsEmp{
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.buttonsOpcEmp{
+  width: 25px;
+  height: 100%;
+  background-color: #ececec;
+  margin-right: 9px;
+  border-radius: 6px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.opcIcons{
+  color: white;
+}
+
+#bt1ApagEmp{
+  background-color: rgb(226, 45, 45);
+}
+
+#bt1ApagEmp:hover{
+  background-color: rgb(185, 5, 5);
+}
+
+#bt2EditEmp{
+  background: rgb(41, 41, 248);
+  width: 25px;
+}
+
+#bt2EditEmp:hover{
+  background: rgb(3, 3, 177);
+}
+
+#bt3{
+  background: rgb(34, 34, 34);
+  margin-right: 0px;
+}
+
+#bt3:hover{
+  background: rgb(0, 0, 0);
+}
+
