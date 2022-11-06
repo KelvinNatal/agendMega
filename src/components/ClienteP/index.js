@@ -26,7 +26,8 @@ const ClienteP = () => {
         ramais: '',
         dataEmp: '',   
         link: '',
-        state: 'criarEmpresa'
+        state: 'criarEmpresa',
+        type: 1
     });    
 
     const inputValue = (e) => {
@@ -114,11 +115,22 @@ const ClienteP = () => {
     }
 
     const deleteAgend = async (id) => {
-      await fetch(`https://agendphp.herokuapp.com/index.php/${id}/delempresa`,{
-        method: 'DELETE'       
+      const input = {
+        idup: id,
+        state: 'delempresa',
+        type: 0
+      }
+      await fetch(`https://agendphp.herokuapp.com/index.php`,{     
+        method: 'PUT',      
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+          body: JSON.stringify({input})         
       })
       .then((response) => response.json())
       .then((responseJson) => {      
+        console.log(responseJson)
         getEmpresas();          
       })
     }

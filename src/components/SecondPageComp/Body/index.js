@@ -23,7 +23,8 @@ const Body = () => {
         status: '',
         analista: '',
         observacao: '',
-        state: 'criarAgendamento'     
+        state: 'criarAgendamento',
+        type: 1     
     });    
 
     const [status, setStatus] = useState({
@@ -33,8 +34,7 @@ const Body = () => {
 
     const inputValue = (e) => {
         let valor = e.target.value;
-        setProduct({...product, state: 'criarAgendamento',[e.target.name]: valor});    
-        console.log(product)   
+        setProduct({...product, state: 'criarAgendamento',[e.target.name]: valor});     
     }
 
     const inputD = () => {
@@ -55,8 +55,7 @@ const Body = () => {
       }
 
       var dataI;
-      var dataF; 
-   
+      var dataF;   
 
     const getFilter = () => {
        dataI = document.getElementById('inputInicial').value; 
@@ -77,7 +76,6 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-              console.log(responseJson)
                 setProducts(responseJson.listaFiltro);
             }).catch((error)=>{                
                 console.log(error)
@@ -96,6 +94,7 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
+              console.log(responseJson)
               if(responseJson.erro){                 
                 setStatus({
                     type: 'erro',
@@ -110,11 +109,21 @@ const Body = () => {
     }
 
     const deleteAgend = async (id) => {
-      await fetch(`https://agendphp.herokuapp.com/index.php/${id}/delagend`,{
-        method: 'DELETE'       
+      const input = {
+        idup: id,
+        state: 'delagend',
+        type: 0
+      }
+      await fetch(`https://agendphp.herokuapp.com/index.php`,{
+        method: 'PUT',      
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+          body: JSON.stringify({input})         
       })
       .then((response) => response.json())
-      .then((responseJson) => {      
+      .then((responseJson) => {   
         window.location.reload();          
       })
     }

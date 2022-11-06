@@ -17,7 +17,8 @@ const Register = () => {
         username: '',
         password: '',
         cargo: '',
-        state: 'registrar'
+        state: 'registrar',
+        type: 1
     }); 
 
     const handleClose = () => {
@@ -77,16 +78,25 @@ const Register = () => {
     }
 
     const deleteUser= async (id) => {
-        await fetch(`https://agendphp.herokuapp.com/index.php/${id}/delUser`,{
-          method: 'DELETE'       
-        })
+        const input = {
+            idup: id,
+            state: 'delUser',
+            type: 0
+        }
+        await fetch(`https://agendphp.herokuapp.com/index.php`,{
+            method: 'PUT',      
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+              body: JSON.stringify({input})         
+          })
         .then((response) => response.json())
         .then((responseJson) => {      
           console.log(responseJson);
           getUsers();          
         })
       }
-
     useEffect(() => {
         getUsers();
     }, [])
