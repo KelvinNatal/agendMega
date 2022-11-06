@@ -124,7 +124,7 @@ const Body = () => {
       })
       .then((response) => response.json())
       .then((responseJson) => {   
-        window.location.reload();          
+        navigate('/addproduct');          
       })
     }
         

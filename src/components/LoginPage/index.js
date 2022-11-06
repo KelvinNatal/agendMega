@@ -1,7 +1,7 @@
 import './style.css'
 import logo from '../../agendaIcon.png';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Register = () => {
 
@@ -37,13 +37,13 @@ const Register = () => {
         }            
     }
   
-   /*useEffect(() => {
+   useEffect(() => {
         if(sessionStorage.getItem('userData') !== null){            
             navigate('/homepage');
          }else{
             navigate('/');
          }         
-    }, [navigate])*/
+    }, [navigate])
     
     return (
         <>
