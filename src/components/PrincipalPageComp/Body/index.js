@@ -58,7 +58,7 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-              console.log(responseJson);
+              //console.log(responseJson);
               if(responseJson !== ''){
                 setAgendamentos(responseJson.listaAgendamentos);   
               if(obj.userData.cargo !== "Admin"){

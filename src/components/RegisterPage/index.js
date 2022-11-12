@@ -55,7 +55,7 @@ const Register = () => {
             })
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log(responseJson);
+            //console.log(responseJson);
             setUsers(responseJson.listaUsuarios);
         });
     };
@@ -93,7 +93,7 @@ const Register = () => {
           })
         .then((response) => response.json())
         .then((responseJson) => {      
-          console.log(responseJson);
+          //console.log(responseJson);
           getUsers();          
         })
       }
