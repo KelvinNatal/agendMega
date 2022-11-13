@@ -1,55 +1,58 @@
-.head{
-    background-color: #272727;
-    width: 70px;
-    height: 100vh;
-    position: fixed;
-    z-index: 4;
+.todoSide{
+    display: 'flex';
+    height: '100vh';
+    color: 'white';
 }
 
-.logoNav{
-    width: 70px;
-    height: 70px;
+.logoSide{
+    width: 65px;
+    height: 65px;
     margin-top: -5px
 }
 
-.teste{
-    width: 75px;
-    height: 50px; 
-    padding-top: 6px;   
-    padding-left: 18px;
+.titleSide{
+    padding-left: 50px;
+    padding-top: 5px;
 }
 
-.teste:hover{
-    background-color: #494949;  
-    transition: 0.05s;
-    opacity: 1;
-    box-shadow: -2px -1px 16px 5px rgba(0,0,0,0.43)
-}
-
-.navIcons{
+.navIcon{
     width: 30px;
     height: 30px;
     color: white;
 }
 
-#navUse{
-    justify-content: center;
+.navIcon2{
+    width: 30px;
+    height: 30px;
     color: white;
-    filter: contrast(100%);
-    margin-left: 3px;
 }
 
-.iconsNav{
-    margin: 33vh 0;
+.navIcon3{
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
 }
 
-.icones{
-    margin-left: 0px;
-    padding-bottom: 5px;
+.profDiv{
+    position:relative;
+    width: 100px;
+    margin-bottom: -62px;
+    margin-left: 60px;
+    cursor: pointer;
+    z-index: 1;
+}
+.profDiv{
+    position:relative;
+    width: 100px;
+    margin-bottom: -62px;
+    margin-left: 60px;
+    cursor: pointer;
+    z-index: 1;
 }
 
-.btnMenu{    
-    padding-right: 2px;
-    margin-left: 18px;
-}
 
+
+.buttonSide{
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+}

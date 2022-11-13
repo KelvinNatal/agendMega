@@ -12,6 +12,7 @@
   width: 85vw;
   height: 100vh;
   margin-left: 10vw;
+  margin-top: -20px;
   z-index: 1;
 }
 
@@ -226,7 +227,7 @@ display: block;
   float: left;
   background-color: #fff;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 12px;
   overflow-y: scroll;
   z-index: 2;
   border-radius: 10px;
@@ -265,7 +266,7 @@ display: block;
   float: left;
   background-color: #fff;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-left: 20px;
   overflow-y: scroll;
   z-index: 2;

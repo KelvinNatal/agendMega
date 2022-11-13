@@ -1,17 +1,14 @@
-.todoExemplo{
-  /*background-color: rgb(233, 230, 230);***/
-  width: 100%;
-}
-
 .todoConteudoAdd{
   background-color: rgb(233, 230, 230);
   width: 100%;
+  height: 100vh;
 }
 
 .conjuntoAdd{
   width: 85vw;
   height: 100vh;
   margin-left: 10vw;
+  margin-top: -20px;
   z-index: 1;
 }
 
@@ -26,9 +23,6 @@
 
 .container{
   width: 85%;
-}
-
-.all{
 }
 
 .buttons{
@@ -226,7 +220,7 @@ display: block;
   float: left;
   background-color: #fff;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 12px;
   overflow-y: scroll;
   z-index: 2;
   border-radius: 10px;
@@ -252,7 +246,7 @@ display: block;
   position: absolute;
   margin-top: 9px;
   margin-left: 12px;
-  width: 65.1vw;
+  width: 62%;
   height: 74vh;
   background: rgb(156, 156, 156);
   z-index: -1;
@@ -260,29 +254,29 @@ display: block;
 }
 
 
-.filtroDiv{
-  width: 17vw;
+.filtroDivAdd{
+  width: 23%;
   float: left;
   background-color: #fff;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-left: 20px;
   overflow-y: scroll;
   z-index: 2;
   border-radius: 10px;
 }
 
-.filtroDiv::-webkit-scrollbar{
+.filtroDivAdd::-webkit-scrollbar{
   display: none;  
 }
 
-.filtroDiv::before {
+.filtroDivAdd::before {
   content: "";
   position: absolute;
   margin-top: 9px;
-  width: 15vw;
+  width: 18vw;
   margin-left: 15px;
-  height: 32vh;
+  height: 39%;
   background: rgb(156, 156, 156);
   z-index: -1;
   filter: blur(20px);
@@ -336,7 +330,7 @@ display: block;
 .cabeButtons{
   width: 85vw;
   height: 4vh;
-  margin-top: 100px;
+  margin-bottom: 3.5px;
 }
 
 .btnFiltro{  

@@ -16,7 +16,7 @@ const UpdateAgend = (props) => {
 
     const updateProduct = async (e) =>{ 
         e.preventDefault();        
-              await fetch(`https://agendphp.herokuapp.com/index.php`,{ 
+              await fetch(`http://localhost/final/index.php`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const UpdateAgend = (props) => {
             state: "agendamento",
             idup: id
         }   
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

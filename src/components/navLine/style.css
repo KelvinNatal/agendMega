@@ -3,7 +3,7 @@
     background-color: #272727;
     width: 100vw;
     box-shadow: 2px 1px 4px 1px rgba(0,0,0,0.51);
-    z-index: 3;
+    z-index: 0;
 }
 
 .todoNavLine{
@@ -12,7 +12,7 @@
 
 .naveLine{
     width: 100vw;
-    height: 60px;
+    height: 55px;
 }
 
 .TituloDiv{
@@ -22,8 +22,9 @@
 .tituloPagina{
     font-family: 'Nunito', sans-serif; 
     font-weight: bold;
+    font-size: 20pt;
     padding-top: 10px;
-    margin-left: 42.5vw;
+    margin-left: 40vw;
 }
 
 .perfIcon{
@@ -47,12 +48,13 @@
 }
 
 .descPerfil{
-    margin-left: 10px;
+    margin-left: 8px;
     margin-top: 5px;
 }
 
 .titlePerfil{
-    font-family: 'Nunito', sans-serif;    
+    font-family: 'Nunito', sans-serif;  
+    font-size: 12pt;  
 }
 
 #subtitlePerfil{

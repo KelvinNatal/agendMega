@@ -66,7 +66,7 @@ const Body = () => {
         state: 'filter'
       }     
       
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const Body = () => {
 
     const cadProduct = async (e) =>{ 
       e.preventDefault();        
-            await fetch("https://agendphp.herokuapp.com/index.php",{ 
+            await fetch("http://localhost/final/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ const Body = () => {
         state: 'delagend',
         type: 0
       }
-      await fetch(`https://agendphp.herokuapp.com/index.php`,{
+      await fetch(`http://localhost/final/index.php`,{
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

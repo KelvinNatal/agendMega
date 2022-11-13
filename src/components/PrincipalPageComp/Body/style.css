@@ -17,7 +17,7 @@ Header{
 
 
 .todoConteudo{
-    padding-top: 100px;
+    padding-top: 60px;
     overflow-x: hidden;
     width: 100vw;
     white-space: nowrap;
@@ -89,7 +89,7 @@ Header{
     width: 20vw;
     height: 150px;
     border-radius: 15px;
-    margin-top: 4px;
+    margin-top: 10px;
     margin-right: 25px;
 }
 
@@ -105,12 +105,13 @@ Header{
     color: white;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
+    font-size: 18pt;
     margin-left: 10px;
     
 }
 
 .subtitleCard{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 18pt;
 }
 
@@ -128,7 +129,7 @@ Header{
     margin-left: 5px;
     margin-top: 5px;
     width: 19.4vw;
-    height: 152px;
+    height: 150px;
     background: linear-gradient(87deg, rgba(195,34,34,1) 0%, rgba(253,146,45,1) 92%);
     z-index: -1;
     filter: blur(10px);
@@ -148,7 +149,7 @@ Header{
     margin-left: 5px;
     margin-top: 5px;
     width: 19.4vw;
-    height: 152px;
+    height: 150px;
     background: linear-gradient(63deg, rgba(45,60,253,1) 0%, rgba(195,34,172,1) 100%);
     z-index: -1;
     filter: blur(10px);
@@ -168,7 +169,7 @@ Header{
     margin-left: 5px;
     margin-top: 5px;
     width: 19.4vw;
-    height: 152px;
+    height: 150px;
     background: linear-gradient(63deg, rgba(253,244,45,1) 0%, rgba(34,195,169,1) 100%);
     z-index: -1;
     filter: blur(10px);
@@ -188,7 +189,7 @@ Header{
     position: absolute;
     margin-left: 5px;
     margin-top: 5px;
-    height: 152px;
+    height: 150px;
     background: linear-gradient(63deg, rgba(253,45,241,1) 0%, rgba(195,34,34,1) 100%);
     z-index: -1;
     filter: blur(10px);
@@ -201,9 +202,8 @@ Header{
 
 .dashDiv{
     width: 85vw;
-    height: 35vh;
+    height: 38vh;
     border-radius: 20px;
-
 }
 
 .conjuntoTotal{
@@ -236,11 +236,11 @@ Header{
 .agendamentosDiv{
         display: flex;
         width: 74.5%;
-        height: 58vh;
+        height: 57vh;
         float: left;
         background-color: #fff;
         margin: 0 auto;
-        margin-top: -5vh;
+        margin-top: -8vh;
         overflow-y: scroll;
         z-index: 2;
         border-radius: 10px;
@@ -267,7 +267,7 @@ Header{
   margin-top: 9px;
   margin-left: 12px;
   width: 62.2vw;
-  height: 57.5vh;
+  height: 56.5vh;
   background: rgb(156, 156, 156);
   z-index: -1;
   filter: blur(20px);
@@ -282,7 +282,7 @@ Header{
     float: left;
     background-color: #fff;
     margin: 0 auto;
-    margin-top: -5vh;
+    margin-top: -8vh;
     margin-left: 28px;
     overflow-y: scroll;
     z-index: 2;

@@ -7,6 +7,7 @@ import ClientePage from "./pages/ClientePage";
 import UpdatePage from "./pages/AddPage/updatePage";
 import UpdateClientePage from "./pages/ClientePage/updatePage";
 import UpdateUserPage from "./pages/RegisterPage/updatePage";
+import TestePage from "./pages/TestePage";
 
 const Routte = () => {
 
@@ -24,6 +25,7 @@ const Routte = () => {
         <Route path="/addcliente/:id/editcliente" caseSensitive={false} element={<UpdateClientePage/>} />
         <Route path="/register" caseSensitive={false} element={<RegisterPage />} />
         <Route path="/register/:id/edituser" caseSensitive={false} element={<UpdateUserPage />} />
+        <Route path="/testepage" caseSensitive={false} element={<TestePage />} />
       </Routes>
       </div>
     </Router>

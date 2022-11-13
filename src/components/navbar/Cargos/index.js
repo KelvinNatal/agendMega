@@ -1,4 +1,5 @@
 import { FaUserCog } from "react-icons/fa";
+import { MenuItem } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 
 const Cargos = () => {
@@ -6,9 +7,7 @@ const Cargos = () => {
     return(
         <>
             <div className="icones">
-                <div className=" teste">
-                    <Link to="/register"><FaUserCog className="navIcons" id="navUse"/></Link>
-                </div>
+                    <MenuItem routerLink={<Link to="/register" />} icon={<FaUserCog className='navIcon3'/>}>Usuários</MenuItem>
             </div>
         </>
     );

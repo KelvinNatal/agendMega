@@ -48,7 +48,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
