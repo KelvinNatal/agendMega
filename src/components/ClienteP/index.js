@@ -56,7 +56,7 @@ const ClienteP = () => {
       const input = {
         state: 'empresas'
       } 
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const ClienteP = () => {
         state: 'filterEmp'
       }     
       e.preventDefault();
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const ClienteP = () => {
     }  
 
     const cadProduct = async () =>{          
-            await fetch("http://localhost/final/index.php",{ 
+            await fetch("https://agendphp.herokuapp.com/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const ClienteP = () => {
         state: 'delempresa',
         type: 0
       }
-      await fetch(`http://localhost/final/index.php`,{     
+      await fetch(`https://agendphp.herokuapp.com/index.php`,{     
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',

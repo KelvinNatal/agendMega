@@ -14,7 +14,7 @@ const Register = () => {
 
     const loginn = () => {
         if(user.username !== '' && user.password !== ''){
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`https://agendphp.herokuapp.com/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

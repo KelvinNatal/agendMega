@@ -45,7 +45,7 @@ const Register = () => {
         const user = {
             state: 'usuarios'
         }
-        await fetch("http://localhost/final/index.php", {
+        await fetch("https://agendphp.herokuapp.com/index.php", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const Register = () => {
     };
 
     const cadUsuario = async () =>{                   
-            await fetch("http://localhost/final/index.php",{ 
+            await fetch("https://agendphp.herokuapp.com/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const Register = () => {
             state: 'delUser',
             type: 0
         }
-        await fetch(`http://localhost/final/index.php`,{
+        await fetch(`https://agendphp.herokuapp.com/index.php`,{
             method: 'PUT',      
             headers: {
               'Content-Type': 'application/json',
