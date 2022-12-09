@@ -29,11 +29,11 @@ const ClienteP = () => {
       link: '',
       state: 'criarEmpresa',
       type: 1
-  });    
+  });
 
     useEffect(() => {
-      setProduct({...product, 'produto': vall});
-    },[vall, product])
+      setProduct(p => ({...p, 'produto': vall}));
+    },[vall])
 
     const  options  = [
       { label:  'Discador', value:  'D'  },
