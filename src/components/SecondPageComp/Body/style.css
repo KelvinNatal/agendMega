@@ -1,6 +1,6 @@
 .todoConteudoAdd{
   background-color: rgb(233, 230, 230);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -441,6 +441,10 @@ display: block;
   bottom: 92px;
 }
 
+#calendarD{
+  left: 257px;
+}
+
 .botaoFiltro{
   width: 35px;
   height: 35px;
@@ -481,9 +485,7 @@ display: block;
   z-index: 2;
 }
 
-#inputF::-webkit-calendar-picker-indicator {
-  right: 35%;
-}
+
 
 /* Formulario */
   h1 {
@@ -528,24 +530,10 @@ display: block;
   margin: 10px 0;
   margin-left: 10px;
   }
-  input[type="date"]::-webkit-inner-spin-button {
-  display: none;
-  }
-  .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-  position: absolute;
-  font-size: 20px;
-  color: #a9a9a9;
-  }
   .item i {
   left: 94%;
   top: 30px;
  z-index: 1;
-  }
-  [type="date"]::-webkit-calendar-picker-indicator {
-  left: 93%;
-  z-index: 2;
-  opacity: 0;
-  cursor: pointer;
   }
   .street, .desired-outcome-item, .complaint-details-item {
   display: flex;
@@ -583,9 +571,6 @@ display: block;
   left: 59%;
   top: 30%;
   }
-  #dateCalendar::-webkit-calendar-picker-indicator {
-  left: 58%;
-  }
   .street, .desired-outcome-item, .complaint-details-item {
   width: 70%;
   }
@@ -622,6 +607,7 @@ display: block;
   height: 38px;
   position: relative;
   margin-left: 5px;
+  margin-top: 5px;
 }
 
 .agendCardAgend{
@@ -651,57 +637,79 @@ display: block;
 .empresaDivAgend, .cabeEmpAgend{
   width: 13%;
   height: 100%;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-left: 5px;  
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 .clienteDivAgend, .cabeCliAgend{
   width: 11%;
   height: 100%;
   white-space: nowrap; 
   overflow: hidden;
-  text-overflow: ellipsis;  
+  text-overflow: ellipsis; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 .telefoneDivAgend, .cabeTelAgend{
   width: 11%;
   height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .dataDivAgend, .cabeDatAgend{
   width: 10%;
   height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .horarioDivAgend, .cabeHorAgend{
   width: 10%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .statusDivAgend, .cabeStaAgend{
   width: 9%;
   height: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .analistaDivAgend, .cabeAnaAgend{
   width: 13%;
   height: 100%;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .obsDivAgend, .cabeObsAgend{
   width: 11%;
   height: 100%;
   white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; 
+  overflow:hidden;
+  text-overflow:clip;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .opcoesDivAgend, .cabeOpcAgend{
   width: 13%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .opcButtonsAgend{
-  width: 40%;
   height: 100%;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonsOpcAgend{
@@ -770,4 +778,43 @@ display: block;
   z-index: -1;
   filter: blur(20px);
 }
+
+/* Search Filter */
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.EmpFilter{
+  width: 132px;
+}
+
+.dropdown {
+  position: fixed;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  margin-left: 8px;
+  margin-top: 35px;
+  z-index: 2;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.dropdown-row {
+  cursor: pointer;
+  text-align: left;
+  margin: 10px 10px;
+  
+}
+
+.search-inner {
+  display: flex;
+}
+
 

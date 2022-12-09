@@ -22,8 +22,7 @@ const NavLine = (props) => {
                 <div className=" todoNavLine container-fluid d-flex">
                     <div className='TituloDiv'>
                         <h3 className='tituloPagina'>{props.name}</h3>
-                    </div>
-                    
+                    </div>                    
                         <div className="perfilDiv d-flex" onClick={logout}>
                             <HiUserCircle className='perfIcon'/>
                             <div className='descPerfil'>

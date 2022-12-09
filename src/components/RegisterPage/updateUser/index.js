@@ -18,7 +18,7 @@ const UpdateUser = (props) => {
 
     const updateUsuario = async (e) =>{     
       e.preventDefault();   
-              await fetch(`https://agendphp.herokuapp.com/index.php`,{ 
+              await fetch(`http://localhost/final/index.php`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const UpdateUser = (props) => {
           state: 'usuario',
           idup: id
         }
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
           method: "POST",
           headers: {
               'Content-Type': 'application/json',
@@ -73,13 +73,12 @@ const UpdateUser = (props) => {
         <div className="item">
           <p>Cargo</p>
           <select id="analista" name="cargo" onChange={handleChange} value={input.cargo}>
-              <option value="">Cargo</option>
               <option value="Admin">Admin</option>
               <option value="Analista">Analista</option>
             </select>
         </div>
         <div className="btn-block">
-          <button type="submit" className="botaoForm">Cadastrar</button>
+          <button type="submit" className="botaoFormUser">Cadastrar</button>
         </div>    
         </form>
     </div>

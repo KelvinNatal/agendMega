@@ -1,19 +1,13 @@
-body{
-    margin: 0px;
-    padding: 0px;
-}
-
 .todoConteudoRegister{
         background-color: rgb(233, 230, 230);
         width: 100vw;
         height: 100vh;
-        align-items: center;
 }
 
 .conjuntoUser{
-    margin-top: -180px;
     width: 85vw;
     height: 50vh;
+    margin-top: 75px;
     margin-left: 10vw;
     z-index: 1;
 }
@@ -22,7 +16,7 @@ body{
   width: 40px;
   height: 40px;
   background: rgb(41, 41, 248);
-  margin-left: 5px;
+  margin-left: 0px;
   color: white;
   padding-top: 5px;
   margin-bottom: 28px;
@@ -40,13 +34,16 @@ body{
     background: rgb(2, 2, 202);
 }
 
+.CardsU{
+    margin-top: 38px;
+}
+
 .UsersDiv{
     display: flex;
     width: 100%;
-    height: 74vh;
+    height: 75vh;
     background-color: #fff;
     margin: 0 auto;
-    margin-top: 3vw;
     overflow-y: scroll;
     z-index: 2;
     border-radius: 25px;
@@ -156,12 +153,12 @@ body{
 
 .regMod{
     width: 30vw;
-    height: 330px;
+    height: 340px;
     margin: 10vh auto;
 }
 
 .userCard{
-    width: 16%;
+    width: 200px;
     height: 50%;
     border-radius: 15px;
     margin-right: 10px;
@@ -173,7 +170,7 @@ body{
     position: absolute;
     margin-top: 9px;
     margin-left: 12px;
-    width: 89%;
+    width: 170px;
     height: 91%;
     background: rgb(156, 156, 156);
     z-index: -1;
@@ -185,7 +182,7 @@ body{
     font-size: 15pt;
 }
 .userIcon{
-    width: 8vw;
+    width: 50px;
     height: 8vh;
     margin: 25px auto;
 }

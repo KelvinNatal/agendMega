@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { FaCalendarAlt } from "react-icons/fa";
+import './style.css'
 const UpdateAgend = (props) => { 
 
     const {id} = useParams();
     const[input, setInput] = useState([]);   
+    const [users, setUsers] = useState([]);
     
     const navigate = useNavigate();
 
@@ -13,6 +15,26 @@ const UpdateAgend = (props) => {
         const value = e.target.value;
         setInput(values => ({...values, state: 'upAgend', idup: id, [name]: value}));
     }
+
+    const getUsers = async () => {
+      const user = {
+          state: 'usuarios'
+      }
+      await fetch("http://localhost/final/index.php", {
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+              body: JSON.stringify({user})         
+          })
+      .then((response) => response.json())
+      .then((responseJson) => {
+          //console.log(responseJson);
+          setUsers(responseJson.listaUsuarios);
+      });
+  };
+
 
     const updateProduct = async (e) =>{ 
         e.preventDefault();        
@@ -53,6 +75,10 @@ const UpdateAgend = (props) => {
             })                 
     }, [id]) 
 
+    useEffect(()=>{
+      getUsers();
+    },[])
+
     return(
         <>
         <div className="corpoPagina">
@@ -61,7 +87,8 @@ const UpdateAgend = (props) => {
         <div className='dataHora' >
             <div className="item">
                 <p>Data/Horário</p>
-                <input type="date" name="data" id="dateCalendar"  required value={input.data}/>
+                <input type="date" name="data" id="dateCalend"  required onChange={handleChange} value={input.data}/>
+                <FaCalendarAlt className="calendarIconAgend" id="calendarIA"/>
                 <select id="horario" name="horario" onChange={handleChange} value={input.horario}>
                     <option value="">Horário</option>
                     <option value="09:00">09:00</option>
@@ -74,7 +101,6 @@ const UpdateAgend = (props) => {
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
                 </select>
-                <i className="icone fas fa-calendar-alt"></i>
             </div>
         </div>
         <div className="item">
@@ -83,11 +109,11 @@ const UpdateAgend = (props) => {
         </div>
         <div className="item">
           <p>Analista</p>
-          <select id="analista" name="analista" onChange={handleChange} value={input.analista} >
-              <option value="">Analista</option>
-              <option value="Amutti">Gabriel Amutti</option>
-              <option value="Victor Rodrigues">Victor Rodrigues</option>
-              <option value="Richard">Richard</option>
+          <select id="analista" name="analista" onChange={handleChange} value={input.analista} key={users.user_id}>
+            {typeof users !== "undefined" && Object.values(users).map((user, index) =>                          
+              <option value={user.username}>{user.username}</option>                             
+              )
+            }
             </select>
         </div>
         <div className="item">

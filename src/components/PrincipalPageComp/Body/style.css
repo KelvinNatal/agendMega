@@ -128,7 +128,7 @@ Header{
     position: absolute;
     margin-left: 5px;
     margin-top: 5px;
-    width: 19.4vw;
+    width: 18.2vw;
     height: 150px;
     background: linear-gradient(87deg, rgba(195,34,34,1) 0%, rgba(253,146,45,1) 92%);
     z-index: -1;
@@ -148,7 +148,7 @@ Header{
     position: absolute;
     margin-left: 5px;
     margin-top: 5px;
-    width: 19.4vw;
+    width: 18.2vw;
     height: 150px;
     background: linear-gradient(63deg, rgba(45,60,253,1) 0%, rgba(195,34,172,1) 100%);
     z-index: -1;
@@ -168,7 +168,7 @@ Header{
     position: absolute;
     margin-left: 5px;
     margin-top: 5px;
-    width: 19.4vw;
+    width: 18.2vw;
     height: 150px;
     background: linear-gradient(63deg, rgba(253,244,45,1) 0%, rgba(34,195,169,1) 100%);
     z-index: -1;
@@ -197,18 +197,21 @@ Header{
   }
 
   #lastCard::before {
-    width: 19.1vw;
+    width: 18.2vw;
   }
 
 .dashDiv{
-    width: 85vw;
+    width: 80vw;
     height: 38vh;
     border-radius: 20px;
+    margin: 0 auto;
 }
 
 .conjuntoTotal{
-    width: 85vw;
+    width: 80vw;
     margin-left: 10vw;
+    position: fixed;
+    min-height: 712px;
 }
 
 #buttonDash{
@@ -233,10 +236,14 @@ Header{
     background-color: rgb(238, 236, 236);
 }
 
+.tudoBaixo{
+  width: 10px;
+}
+
 .agendamentosDiv{
         display: flex;
-        width: 74.5%;
-        height: 57vh;
+        width: 59.7vw;
+        height: 530px;
         float: left;
         background-color: #fff;
         margin: 0 auto;
@@ -266,8 +273,8 @@ Header{
   position: absolute;
   margin-top: 9px;
   margin-left: 12px;
-  width: 62.2vw;
-  height: 56.5vh;
+  width: 58.3vw;
+  height: 64%;
   background: rgb(156, 156, 156);
   z-index: -1;
   filter: blur(20px);
@@ -278,8 +285,9 @@ Header{
 }
 
 .filtroDivDash{
-    width: 19vw;
-    float: left;
+    width: 18.3vw;
+    height: 260px;
+    float: right;
     background-color: #fff;
     margin: 0 auto;
     margin-top: -8vh;
@@ -297,12 +305,152 @@ Header{
     content: "";
     position: absolute;
     margin-top: 9px;
-    width: 17.5vw;
+    width: 17vw;
     margin-left: 15px;
-    height: 70px;
+    height: 250px;
     background: rgb(156, 156, 156);
     z-index: -1;
     filter: blur(20px);
+  }
+
+  .conteudoT{
+    height: 20vh;
+    z-index: 0;
+  }
+
+  .analistAnd{
+    padding-left: 6px;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+  .analistEach{
+    margin-bottom: -1px;
+  }
+
+  .conteudoA{
+    width: 22.5%;
+    position: absolute;
+  }
+
+  .containerAnalistas{
+    background-color: rgba(228, 226, 226, 0.322);
+    width: 16vw;
+    height: 180px;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 12px;
+  }
+
+  .andamentoDiv{
+    width: 18.3vw;
+    height: 260px;
+    float: right;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-left: 28px;
+    overflow-y: scroll;
+    z-index: 2;
+    border-radius: 10px;
+  }
+
+  .btnAnd{  
+    width: 85%;
+    height: 40px;
+    background: rgb(37, 37, 37);
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+    border-radius: 13px;
+    margin: 5px auto;
+    margin-top: 10px;
+    z-index: 2;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+
+  .btnFiltroHome{
+    width: 85%;
+    height: 40px;
+    background: rgb(37, 37, 37);
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+    border-radius: 13px;
+    margin: 5px auto;
+    margin-top: 10px;
+    z-index: 2;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+  
+  .andamentoDiv::-webkit-scrollbar{
+    display: none;  
+  }
+  
+  .andamentoDiv::before {
+    content: "";
+    position: absolute;
+    margin-top: 9px;
+    width: 17vw;
+    margin-left: 15px;
+    height: 250px;
+    background: rgb(156, 156, 156);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .containerAnalistasAnd{
+    background-color: rgba(187, 0, 0, 0.404);
+    border-radius: 0px;
+    width: 18.3vw;
+  }
+
+  .andContent{
+    width: 100%;
+    margin-left: 2.5px;
+  }
+
+  .searchBars{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .andSelect{
+    width: 85%;
+    margin: 0 1.2vw;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(184, 184, 184);
+    background-color: rgba(223, 226, 226, 0.493);
+    padding-left: 5px;
+  }
+
+  .statSelect{
+    width: 85%;
+    margin: 0 1.2vw;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 1px solid rgb(184, 184, 184);
+    background-color: rgba(223, 226, 226, 0.493);
+    padding-left: 5px;
+    z-index: 2;
+  }
+
+  .buttonAndDiv{
+    width: 85%;
+    margin: 0 1.2vw;
+    margin-top: -40px;
+  }
+
+  .buttonAnd{
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 70px;
+    color: white;
+    background-color: rgb(250, 40, 40);
   }
 
   .titleTable{
@@ -403,4 +551,173 @@ Header{
   #bt1Apag:hover{
     background-color: rgb(185, 5, 5);
   }
+
+  @media screen and (max-height: 850px){
+    .btnAnd{
+      height: 35px;
+      font-size: 10pt;
+    }
+
+    .btnFiltroHome{
+      height: 35px;
+      font-size: 10pt;
+    }
+
+    .andSelect{
+      height: 40px;
+      font-size: 10pt;
+    }
+  
+    .statSelect{
+      height: 40px;
+      font-size: 8pt;
+      margin-bottom: -15px;
+      margin-bottom: 3px;
+    }
+
+    .buttonAnd{
+      height: 35px;
+      font-size: 10pt;
+      margin-bottom: 1rem;
+    }
+
+    .filtroDivDash{
+      height: 28.5vh;
+      margin-right: 1px;
+  }
+  .andamentoDiv{        
+      height: 28.5vh;
+  }
+  .agendamentosDiv{
+      height: 58vh;
+  }
+  .containerAnalistas{
+    height: 95%;
+    font-size: 10pt;
+  }  
+  }
+
+  @media screen and (max-height: 800px){
+    .buttonAnd{
+      height: 35px;
+      font-size: 10pt;
+      margin-top: 3.5rem;
+    }
+  }
+
+  @media screen and (max-height: 768px){
+    .filtroDivDash{
+        height: 28.5vh;
+        margin-right: 1px;
+    }
+    .andamentoDiv{        
+        height: 28.5vh;
+    }
+    .agendamentosDiv{
+        height: 58vh;
+    }
+    .containerAnalistas{
+      height: 90%;
+      font-size: 10pt;
+    }    
+    .buttonAnd{
+      height: 30px;
+      font-size: 10pt;
+      margin-top: 4.7rem;
+    }
+    .btnFiltroHome{
+      height: 30px;
+      font-size: 10pt;
+    }
+
+    .andSelect{
+      width: 85%;
+      height: 30px;
+      font-size: 8pt;
+    }
+  
+    .statSelect{
+      width: 85%;
+      height: 30px;
+      font-size: 8pt;
+      margin-bottom: -15px;
+    }
+  }
+
+  @media screen and (max-width: 1460px){
+    .filtroDivDash{
+        display: flex;
+        flex-direction: column;
+        width: 17.8vw;
+    }
+
+    .btnAnd{
+      height: 30px;
+      font-size: 10pt;
+    }
+
+    .andamentoDiv{        
+        width: 17.8vw;
+    }
+
+  }
+
+  @media screen and (max-width: 1366px){
+
+    .buttonAnd{
+      margin-top: 3.1rem;
+      height: 5vh;
+    }
+
+    .andSelect{
+      margin-top: 0.5rem;
+    }
+  
+    .statSelect{
+      margin-top: 0.5rem;
+      margin-bottom: 0rem;
+    }
+
+  }
+
+  @media screen and (max-width: 1360px){
+    .filtroDivDash{
+        display: flex;
+        flex-direction: column;
+        width: 18vw;
+        margin-right: 1px;
+    }
+    .andamentoDiv{        
+        width: 18vw;
+        margin-right: 1px;
+    }
+
+  }
+
+  @media screen and (max-width: 1280px){
+    .filtroDivDash{
+        display: flex;
+        flex-direction: column;
+        width: 17.5vw;
+    }
+    .andamentoDiv{        
+        width: 17.5vw;
+    }
+
+  }
+
+  @media screen and (max-width: 1040px){
+    .filtroDivDash{
+        display: flex;
+        flex-direction: column;
+        width: 17.4vw;
+    }
+
+    .andamentoDiv{        
+      width: 17.4vw;
+  }
+
+
+  }
+
 

@@ -1,0 +1,66 @@
+.corpoPaginaEmp{
+    width: 100vw;
+    height: 100vh; 
+    background-color: rgb(233, 230, 230);
+    z-index: 0;
+  }
+  
+  .corpoUpdateEmp{
+    margin: 12vh 32vw;
+    width: 40vw;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  
+  .corpoUpdateEmp::before {
+    content: "";
+    position: absolute;
+    width: 39vw;
+    height: 560px;
+    background: rgb(156, 156, 156);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  #product_form{
+    height: 100%;
+  }
+
+  .calendarIconEmp{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    z-index: 1;
+    right: -10px;
+  }
+  
+  #calendarIE{
+    right: 38%;
+    top: 8px;
+  }
+
+  .multiselect{
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  #plano{
+    width: 32%;
+   }
+ 
+   #inputPlano{
+     height: 40px;
+     margin-bottom: 9px;
+   }
+
+  @media screen and (max-height: 768px){
+    .corpoPaginaEmp{
+      height: 100%; 
+    }
+  }
+  

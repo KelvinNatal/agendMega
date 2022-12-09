@@ -32,20 +32,13 @@ const Register = () => {
 
     const inputValue = e => setUser({...user, [e.target.name]: e.target.value});
 
-    /*const inputNome = () => {
-        var nome = document.getElementById('nome').value;
-        var sobrenome = document.getElementById('sobrenome').value;
-        var username = `${nome} ${sobrenome}`;
-        setUser({...user, username: username});
-    }*/
-
     const navigate = useNavigate();
 
     const getUsers = async () => {
         const user = {
             state: 'usuarios'
         }
-        await fetch("https://agendphp.herokuapp.com/index.php", {
+        await fetch("http://localhost/final/index.php", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -60,8 +53,8 @@ const Register = () => {
         });
     };
 
-    const cadUsuario = async () =>{                   
-            await fetch("https://agendphp.herokuapp.com/index.php",{ 
+    const cadUsuario = async () =>{              
+            await fetch("http://localhost/final/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -77,13 +70,13 @@ const Register = () => {
             })                            
     }
 
-    const deleteUser= async (id) => {
+    const deleteUser = async (id) => {
         const input = {
             idup: id,
             state: 'delUser',
             type: 0
         }
-        await fetch(`https://agendphp.herokuapp.com/index.php`,{
+        await fetch(`http://localhost/final/index.php`,{
             method: 'PUT',      
             headers: {
               'Content-Type': 'application/json',
@@ -141,19 +134,19 @@ const Register = () => {
             </select>
         </div>
         <div className="btn-block">
-          <button type="submit" className="botaoForm">Cadastrar</button>
+          <button type='submit' className="botaoForm">Cadastrar</button>
         </div>    
         </form>
     </Modal.Body>
             </Modal>
-                        <div className='d-flex '>
+                        <div className='d-flex CardsU'>
                         {
                                 typeof users !== "undefined" && Object.values(users).map((user, index) => {
                                     return (
                         <div className="card userCard" key={user.user_id}>
                             <h5 className="card-title titleCard">{user.cargo}</h5>
                         <div className="card-body bodyC">
-                            <FaUser className="userIcon" id=""/>
+                            <FaUser className="userIcon"/>
                             <p className="card-text userTitle">{user.username}</p>
                         </div>
                         <div className="bottomCard">

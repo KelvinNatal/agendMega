@@ -6,10 +6,10 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 const UpdateUserPage = () => {
     return (
       <>
-        <ProSidebarProvider>
-        <NavBar/>
-        <NavLine name="Alterar Usuário"/>
+        <ProSidebarProvider>          
+        <NavBar/>        
         <UpdateUser/>  
+        <NavLine name="Alterar Usuário"/>
         </ProSidebarProvider>
       </>
     );

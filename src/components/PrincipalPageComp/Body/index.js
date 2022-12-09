@@ -5,42 +5,34 @@ import { useNavigate } from 'react-router-dom';
 
 const Body = () => {
 
+       
     const [agendamentos, setAgendamentos] = useState([]);
+    const [agendAnd, setAgendAnd] = useState([]);
+    const [statusAgend, setStatusAgend] = useState([]);
+    const [stat, setStat] = useState('');
+    const[input, setInput] = useState([]);
 
     const [relatorio, setRelatorios] = useState({
       total: '',
       realizados: '',
       pendentes: '',
       andamento: ''
-    });
+    });      
 
-    //const [deletar, setDeletar] = useState('');
+    const handleEmp = (e) => {
+      var select = document. getElementById("empSel");
+      var opcaoTexto = select. options[select. selectedIndex]. text;
+      setStat(opcaoTexto);
+    }    
+
+    const handleChange = (e) => {
+      const value = e.target.value;
+      setInput(values => ({...values, state:'upState', nomeEmp: stat, statt: value}));
+  }
 
     const navigate = useNavigate();
 
     var obj = JSON.parse(sessionStorage.getItem('userData'));
-
-    /*const getProducts = async () => {
-        await fetch("http://localhost/final/index.php/agendamentos", {
-            method: "GET"
-        })
-        .then((response) => response.json())
-        .then((responseJson) => {
-            console.log(responseJson)
-            setAgendamentos(responseJson.listaAgendamentos)
-            setRelatorios(responseJson.relatorios[0].totalAgendamentos);
-        });
-    }; */
-
-      /*const deleteAgend = async (id) => {
-          await fetch(`http://localhost/final/index.php/${id}/delagend`,{
-            method: 'DELETE'       
-          })
-          .then((response) => response.json())
-          .then((responseJson) => {      
-            getAgendamentos();          
-          })
-        }*/
 
     useEffect(() => {
       const userRel = {
@@ -48,7 +40,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -58,9 +50,11 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-              //console.log(responseJson);
+              console.log(responseJson);
               if(responseJson !== ''){
-                setAgendamentos(responseJson.listaAgendamentos);   
+                setAgendamentos(responseJson.listaAgendamentosToday);  
+                setAgendAnd(responseJson.listaAndamentoToday);
+                setStatusAgend(responseJson.listaAndamentoTodayAnalist);
               if(obj.userData.cargo !== "Admin"){
                 setRelatorios({ total : responseJson.listUserrel[0].totalAgendUser,
                                 realizado: responseJson.realizadoUser[0].realizadoUser,
@@ -78,7 +72,30 @@ const Body = () => {
             }).catch((error)=>{                
                 console.log(error);
             }) 
-    }, [obj])
+    }, [obj.userData.cargo, obj.userData.username])    
+
+    const updateState = async (e) =>{ 
+        e.preventDefault();        
+                await fetch(`http://localhost/final/index.php`,{ 
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                    body: JSON.stringify({input})         
+                })
+                .then((response) => response.json())
+                .then((responseJson) => {
+                  console.log(responseJson)
+                  if(responseJson.estado === "Feito"){
+                    setStat('');
+                  }
+                  window.location.reload(); 
+                }).catch((err)=>{                
+                  console.log(err);
+                })                                                 
+      }
+    
 
     useEffect(() => {
         if(sessionStorage.getItem('userData') !== null){            
@@ -126,6 +143,7 @@ const Body = () => {
                             </div>
                         </div>
                     </div>
+                    <div className='conjunto-content'>
                     <div className='agendamentosDiv d-flex'>
                       <div className='tudoCardDash'>
                         <div className="cabecalhoCardDash d-flex">
@@ -171,17 +189,49 @@ const Body = () => {
                 }
                       </div>                      
                       </div>
+                      <div className='conjunto-lado'>
+                        <div></div>
                       <div className='filtroDivDash'>
-                        <div className='btnFiltro'>
-                            <p>Exemplo</p>
-                        </div>
-                        <div className="tituloFiltro">
-                          <p></p>
-                        </div>
-                        <div className='filterSearch'>
-                        <div className="select">
+                        <div className='conteudoT'>
+                          <div className='btnFiltroHome'>
+                            <p>Treinamento</p>
                           </div>
-                        </div>                        
+                          <div className="containerAnalistas">
+                            <div className="analistAnd">
+                            {typeof agendAnd !== "undefined" && Object.values(agendAnd).map((produc, index) =>                                
+                                <p className='analistEach'> | {produc.analista} </p>
+                              )
+                            }  
+                            </div>
+                          </div>
+                        </div>                                              
+                    </div>
+                    <div className='andamentoDiv'>
+                        <div className="containerAnalistasAnd"/>                        
+                          <div className='btnAnd'>
+                              <p>Andamento</p>
+                         </div>
+                         <div className="andContent">
+                          <div className="searchBars">
+                            <select id="empSel" className='andSelect' onChange={handleEmp}>
+                            <option value=''>-Empresa-</option> 
+                            {typeof statusAgend !== "undefined" && Object.values(statusAgend).map((produc, index) =>                          
+                              <option value={produc.nomeEmpresa}>{produc.nomeEmpresa}</option>                             
+                              )
+                            } 
+                            </select>
+                            <select className='statSelect' onChange={handleChange} value={input.status}>
+                              <option value="" >-Status-</option>
+                              <option value="Andamento" >Andamento</option>
+                              <option value="Feito">Feito</option>
+                            </select>
+                            </div>
+                            <div className='buttonAndDiv'>
+                              <button className="buttonAnd" onClick={updateState}>Alterar Status</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import './style.css'
+import './clientP.css'
 import { useEffect, useState } from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Link, useNavigate} from 'react-router-dom';
@@ -7,34 +7,66 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { TiFilter } from "react-icons/ti";
 import { FaTrashAlt } from "react-icons/fa";
 import { GoPencil } from "react-icons/go";
+import MultiSelect from  'react-multiple-select-dropdown-lite'
 
 const ClienteP = () => {
+
+  const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
     const [products, setProducts] = useState([]);    
-
-    const navigate = useNavigate();
-    
+    const [vall, setvall] = useState('');
     const [product, setProduct] = useState({
-        nomeEmpresa: '',
-        cliente: '',
-        telCliente: '',
-        comercial: '',
-        produto: '',
-        plano: '',
-        ramais: '',
-        dataEmp: '',   
-        link: '',
-        state: 'criarEmpresa',
-        type: 1
-    });    
+      nomeEmpresa: '',
+      cliente: '',
+      telCliente: '',
+      comercial: '',
+      produto: '',
+      plano: '',
+      ramais: '',
+      dataEmp: '',   
+      link: '',
+      state: 'criarEmpresa',
+      type: 1
+  });    
+
+    useEffect(() => {
+      setProduct({...product, 'produto': vall});
+    },[vall, product])
+
+    const  options  = [
+      { label:  'Discador', value:  'D'  },
+      { label:  'Ura-bot', value:  'UB'  },
+      { label:  'Mega-bot', value:  'MB'  },
+      { label:  'SMS', value:  'SMS'  },
+      { label:  'Cloudchat', value:  'CC'  },
+      { label:  'Telefonia', value:  'T'  },
+    ]
+
+    
+    const inputPlano = (e) => {
+      let plano = document.getElementById('plano').value;
+      let canais = document.getElementById('inputPlano').value;
+      if(plano === "Tarifado"){
+        canais = ""
+      }
+      let plan = `${canais} ${plano}`
+      setProduct({...product, 'plano': plan});
+    } 
+
+    const inputRamais= (e) => {
+      let ramais = document.getElementById('ramais').value;
+      let licencas = document.getElementById('licencas').value;
+      let rali = `${ramais}R ${licencas}L`
+      setProduct({...product, 'ramais': rali});
+  } 
 
     const inputValue = (e) => {
         let valor = e.target.value;
         setProduct({...product, [e.target.name]: valor});    
         console.log(product)   
-    }
+    }   
 
     const inputD = () => {
         var date = document.getElementById('dateCalendar').value;
@@ -56,7 +88,7 @@ const ClienteP = () => {
       const input = {
         state: 'empresas'
       } 
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -66,6 +98,7 @@ const ClienteP = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
+              //console.log(responseJson)
                  setProducts(responseJson.listaEmpresas);                          
             }).catch((error)=>{                
                 console.log(error);
@@ -81,7 +114,7 @@ const ClienteP = () => {
         state: 'filterEmp'
       }     
       e.preventDefault();
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +131,7 @@ const ClienteP = () => {
     }  
 
     const cadProduct = async () =>{          
-            await fetch("https://agendphp.herokuapp.com/index.php",{ 
+            await fetch("http://localhost/final/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -120,7 +153,7 @@ const ClienteP = () => {
         state: 'delempresa',
         type: 0
       }
-      await fetch(`https://agendphp.herokuapp.com/index.php`,{     
+      await fetch(`http://localhost/final/index.php`,{     
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',
@@ -161,7 +194,8 @@ const ClienteP = () => {
       });
     }else{
       dataSearch = {};
-    } 
+    }
+  
     
     return (       
       <>
@@ -187,7 +221,7 @@ const ClienteP = () => {
             <div className="item">
                 <p>Data</p>
                 <input type="date" name="dataEmp" id="dateCalendar" onChange={inputD}required/>
-                <i className="icone fas fa-calendar-alt"></i>
+                <FaCalendarAlt className="calendarIconCliente" id="calendarIc"/>
             </div>
         </div>
         <div className="item">
@@ -206,29 +240,33 @@ const ClienteP = () => {
           <p>Comercial</p>
           <select id="comercial" name="comercial" onChange={inputValue}>
               <option value="">Comercial</option>
-              <option value="Mariana">Mariana</option>
-              <option value="Pamela">Pamela</option>
-              <option value="Alef">Alef</option>
-              <option value="Cleiton">Cleiton</option>
+              <option value="Cassiana">Cassiana</option>
               <option value="Elieser">Elieser</option>
-              <option value="Junior">Junior</option>
             </select>
         </div>
         <div className="item">
           <p>Produto</p>
-          <input type="text" name="produto" onChange={inputValue} />
+          <div className='multiselect'>
+            <MultiSelect
+              onChange={setvall}
+              options={options}
+              downArrow={false}
+          />
+          </div>
         </div>
         <div className="item">
           <p>Plano / Canais</p>
-          <select id="plano" name="plano" onChange={inputValue}>
+          <select id="plano" onChange={inputPlano}>
               <option value="">Plano</option>
-              <option value="ilimitado">Ilimitado</option>
-              <option value="tarifado">Tarifado</option>
+              <option value="Ilimitado">Ilimitado</option>
+              <option value="Tarifado">Tarifado</option>
             </select>
+          <input id="inputPlano" type="text" onChange={inputPlano} />
         </div>
         <div className="item">
           <p>Ramais / Licenças</p>
-          <input type="text" name="ramais" onChange={inputValue} />
+          <input id="ramais" type="text" onChange={inputRamais} />
+          <input id="licencas" type="text" onChange={inputRamais} />
         </div>
         <div className="item">
           <p>Link</p>

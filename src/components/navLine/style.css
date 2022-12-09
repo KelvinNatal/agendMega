@@ -35,14 +35,13 @@
 }
 
 .perfilDiv{
-    width: 220px;
+    width: 18vw;
     height: 100%;
     border-left: 2px solid rgb(190, 190, 190);
-    float: right
+    cursor: pointer;
 }
 
-.perfilDiv:hover{
-    cursor: pointer;
+.perfilDiv:hover{    
     background-color: #e7e7e7;
     transition: 0.10s;
 }

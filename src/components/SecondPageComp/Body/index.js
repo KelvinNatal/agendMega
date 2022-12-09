@@ -12,7 +12,9 @@ const Body = () => {
 
     const [show, setShow] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
-    const [products, setProducts] = useState([]);       
+    const [products, setProducts] = useState([]);      
+    const [empresas, setEmpresas] = useState([]);
+    const [users, setUsers] = useState([]);
 
     const navigate = useNavigate();
     
@@ -55,7 +57,49 @@ const Body = () => {
       }
 
       var dataI;
-      var dataF;   
+      var dataF;  
+      
+      const getEmpresas = () => {
+        const input = {
+          state: 'empresas'
+        } 
+          fetch(`http://localhost/final/index.php`,{
+              method: "POST",
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+                body: JSON.stringify({input})         
+              })
+              .then((response) => response.json())
+              .then((responseJson) => {
+                  //console.log(responseJson)
+                   setEmpresas(responseJson.listaEmpresas);                          
+              }).catch((error)=>{                
+                  console.log(error);
+              })                
+      }
+
+   var obj = JSON.parse(sessionStorage.getItem('userData'));     
+
+      const getUsers = async () => {
+        const user = {
+            state: 'usuarios'
+        }
+        await fetch("http://localhost/final/index.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+                body: JSON.stringify({user})         
+            })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            //console.log(responseJson);
+            setUsers(responseJson.listaUsuarios);
+        });
+    };
 
     const getFilter = () => {
        dataI = document.getElementById('inputInicial').value; 
@@ -66,7 +110,7 @@ const Body = () => {
         state: 'filter'
       }     
       
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
+        fetch(`http://localhost/final/index.php`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -76,6 +120,7 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
+              //console.log(responseJson)
                 setProducts(responseJson.listaFiltro);
             }).catch((error)=>{                
                 console.log(error)
@@ -84,7 +129,7 @@ const Body = () => {
 
     const cadProduct = async (e) =>{ 
       e.preventDefault();        
-            await fetch("https://agendphp.herokuapp.com/index.php",{ 
+            await fetch("http://localhost/final/index.php",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -94,7 +139,6 @@ const Body = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-              //console.log(responseJson)
               if(responseJson.erro){                 
                 setStatus({
                     type: 'erro',
@@ -114,7 +158,7 @@ const Body = () => {
         state: 'delagend',
         type: 0
       }
-      await fetch(`https://agendphp.herokuapp.com/index.php`,{
+      await fetch(`http://localhost/final/index.php`,{
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',
@@ -123,43 +167,47 @@ const Body = () => {
           body: JSON.stringify({input})         
       })
       .then((response) => response.json())
-      .then((responseJson) => {   
-        navigate('/addproduct');          
+      .then((responseJson) =>{
+        //console.log(responseJson)
+        window.location.reload();      
       })
     }
-        
-  var obj = JSON.parse(sessionStorage.getItem('userData'));   
 
     useEffect(() => {   
-       var dataI = document.getElementById('inputInicial').value; 
-       var dataF = document.getElementById('inputFinal').value; 
-      const userRel = {
+      var dataI = document.getElementById('inputInicial').value; 
+      var dataF = document.getElementById('inputFinal').value; 
+       const userRel = {
         username: obj.userData.username,
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`https://agendphp.herokuapp.com/index.php`,{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-                body: JSON.stringify({userRel})         
-            })
-            .then((response) => response.json())
-            .then((responseJson) => { 
-              console.log(responseJson)
-              if(dataI === "" || dataF === ""){
-                if(obj.userData.cargo === "Admin"){
-                  setProducts(responseJson.listaAgendamentos);  
-                }else{
-                  setProducts(responseJson.listaUseragend);
-                }            
-            }         
-            }).catch((error)=>{                
-              console.log(error);
-            })     
-    }, [obj]) 
+       fetch(`http://localhost/final/index.php`,{
+           method: "POST",
+           headers: {
+               'Content-Type': 'application/json',
+               'Accept': 'application/json'
+           },
+               body: JSON.stringify({userRel})         
+           })
+           .then((response) => response.json())
+           .then((responseJson) => { 
+             //console.log(responseJson)
+             if(dataI === "" || dataF === ""){
+               if(obj.userData.cargo === "Admin"){
+                 setProducts(responseJson.listaAgendamentos);  
+               }else{
+                 setProducts(responseJson.listaUseragend);
+               }            
+           }         
+           }).catch((error)=>{                
+             console.log(error);
+           })     
+    }, [obj.userData.cargo,obj.userData.username]) 
+
+    useEffect(() => {
+      getEmpresas();
+      getUsers();      
+  }, []);
 
     useEffect(() => {
         if(sessionStorage.getItem('userData') !== null){            
@@ -184,6 +232,21 @@ const Body = () => {
     }else{
       dataSearch = {};
     }      
+
+    const [value, setValue] = useState("");
+
+    const onChange = (e) => {     
+      
+      setValue(e.target.value);
+        
+     };
+
+    const onSearch = (searchTerm) => {
+      setValue(searchTerm);
+      // our api to fetch the search result
+      let valor = searchTerm;
+      setProduct({...product, state: 'criarAgendamento','nomeEmpresa': valor}); 
+    };
     
     return (       
       <>
@@ -194,7 +257,7 @@ const Body = () => {
                     <p>+</p>
                 </div>
                 <div className='pesquisaFiltro'>
-                  <input type="Text" placeholder="Insira..." id="inputFiltro" value={filter} onChange={searchText.bind(this)}></input>
+                  <input  type="Text" placeholder="Insira..." id="inputFiltro" value={filter} onChange={searchText.bind(this)}></input>
                   <IoMdSearch className="fa addIcons"/>
                 </div>
               </div>
@@ -220,21 +283,47 @@ const Body = () => {
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
                 </select>
-                <i className="icone fas fa-calendar-alt"></i>
+                <FaCalendarAlt className="calendarIcon" id="calendarD"/>
             </div>
         </div>
-        <div className="item">
+        <div className="item testandoSearch">
           <p>Empresa</p>
-          <input type="text" name="nomeEmpresa" placeholder="First" onChange={inputValue} />
+          <div className="search-container">
+          <div className="search-inner">
+            <input className="EmpFilter" type="text" name="nomeEmpresa" autocomplete="off" placeholder="First" value={value} onChange={onChange} />
+          </div>
+          <div className="dropdown">
+          {empresas.filter((item) => {
+              const searchTerm = value.toLowerCase();
+              const nomeEmp = item.nomeEmpresa.toLowerCase();
+
+              return (
+                searchTerm &&
+                nomeEmp.startsWith(searchTerm) &&
+                nomeEmp !== searchTerm
+              );
+            })
+            .slice(0, 10)
+            .map((item) => (
+              <div
+                onClick={() => onSearch(item.nomeEmpresa)}
+                className="dropdown-row"
+                key={item.nomeEmpresa}
+              >
+                {item.nomeEmpresa}
+              </div>
+            ))}
+        </div>
+        </div>
           {status.type === 'erro'?<div className="serror">{status.message}</div> : ""} 
         </div>
         <div className="item">
           <p>Analista</p>
-          <select id="analista" name="analista" onChange={inputValue}>
-              <option value="">Analista</option>
-              <option value="Gabriel Amutti">Gabriel Amutti</option>
-              <option value="Victor Rodrigues">Victor Rodrigues</option>
-              <option value="Richard Correa">Richard Correa</option>
+          <select id="analista" name="analista" onChange={inputValue} key={users.user_id}>
+            {typeof users !== "undefined" && Object.values(users).map((user, index) =>                          
+              <option value={user.username}>{user.username}</option>                             
+              )
+            }
             </select>
         </div>
         <div className="item">

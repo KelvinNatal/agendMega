@@ -7,10 +7,12 @@ import "./style.css"
 const AddPage = () => {
     return (
       <>
-        <ProSidebarProvider>
+        <ProSidebarProvider>        
         <NavBar/>
-        <NavLine name="Agendamentos"/>
-        <Body/>  
+        <div className="scroll">      
+          <NavLine name="Agendamentos"/> 
+          <Body/>        
+        </div> 
         </ProSidebarProvider>
       </>
     );

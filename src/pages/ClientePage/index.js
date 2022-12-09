@@ -6,13 +6,14 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 const ClientePage = () => {
     return (
         <>
-        <ProSidebarProvider>
-        <NavBar/>
-        <div className="scroll">
-          <NavLine name="Empresas"/>          
-          <ClienteP />
-        </div>
+        <ProSidebarProvider>        
+        <NavBar/>        
+        <div className="scroll">  
+          <NavLine name="Empresas"/>                
+          <ClienteP />          
+        </div>        
         </ProSidebarProvider>
+         
         </>
     );
 };
