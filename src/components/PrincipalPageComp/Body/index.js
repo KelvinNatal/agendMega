@@ -40,7 +40,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`http://3.84.115.180/dashboard/`,{
+        fetch(`http://107.23.232.93/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Body = () => {
 
     const updateState = async (e) =>{ 
         e.preventDefault();        
-                await fetch(`http://3.84.115.180/dashboard/`,{ 
+                await fetch(`http://107.23.232.93/dashboard/`,{ 
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',

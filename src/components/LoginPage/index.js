@@ -18,7 +18,7 @@ const Register = () => {
 
     const loginn = () => {
         if(user.username !== '' && user.password !== ''){
-        fetch(`http://3.84.115.180/dashboard/`,{
+        fetch(`http://107.23.232.93/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

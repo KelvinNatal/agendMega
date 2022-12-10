@@ -63,7 +63,7 @@ const Body = () => {
         const input = {
           state: 'empresas'
         } 
-          fetch(`http://3.84.115.180/dashboard/`,{
+          fetch(`http://107.23.232.93/dashboard/`,{
               method: "POST",
               headers: {
                   'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const Body = () => {
         const user = {
             state: 'usuarios'
         }
-        await fetch("http://3.84.115.180/dashboard/", {
+        await fetch("http://107.23.232.93/dashboard/", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ const Body = () => {
         state: 'filter'
       }     
       
-        fetch(`http://3.84.115.180/dashboard/`,{
+        fetch(`http://107.23.232.93/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ const Body = () => {
 
     const cadProduct = async (e) =>{ 
       e.preventDefault();        
-            await fetch("http://3.84.115.180/dashboard/",{ 
+            await fetch("http://107.23.232.93/dashboard/",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const Body = () => {
         state: 'delagend',
         type: 0
       }
-      await fetch(`http://3.84.115.180/dashboard/`,{
+      await fetch(`http://107.23.232.93/dashboard/`,{
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-       fetch(`http://3.84.115.180/dashboard/`,{
+       fetch(`http://107.23.232.93/dashboard/`,{
            method: "POST",
            headers: {
                'Content-Type': 'application/json',
