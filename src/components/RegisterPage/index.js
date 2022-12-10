@@ -100,7 +100,7 @@ const Register = () => {
     useEffect(() => {
         if (obj.userData.cargo === "Analista") {
             navigate('/');
-            
+
          }else if(sessionStorage.getItem('userData') !== null){            
             navigate('/register');
          }else{
@@ -108,7 +108,7 @@ const Register = () => {
          }        
 
         
-    }, [navigate])
+    }, [navigate, obj.userData.cargo])
     
     return (
         <>
