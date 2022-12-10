@@ -2,16 +2,25 @@ import logo from '../../agendaIcon.png';
 import { TiHome } from "react-icons/ti";
 import { TbCalendarTime } from "react-icons/tb";
 import { FaClipboardList } from "react-icons/fa";
-import { Sidebar, Menu, MenuItem, useProSidebar, SubMenu } from 'react-pro-sidebar';
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
 import './style.css'
 import Cargos from './Cargos';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
 
 var obj = JSON.parse(sessionStorage.getItem('userData'));
 
 const { collapseSidebar  } = useProSidebar();
+
+const navigate = useNavigate();
+
+const logout = () => {
+  sessionStorage.setItem("userData", '');
+  sessionStorage.clear();
+  navigate('/');
+}  
 
 const choose = () => {
     if(obj.userData.cargo !== "Analista"){
@@ -22,8 +31,9 @@ const choose = () => {
 }
     return ( 
     <>
-    <div style={{ display: 'flex', height: '100vh', position: 'fixed', zIndex:'3'}}>
+    <div style={{ display: 'flex', height: '100%', position: 'fixed', zIndex:'3'}}>
     <Sidebar width="210px" backgroundColor="#272727" defaultCollapsed>
+    <div className='menu'>
     <button className="buttonSide" onClick={() => collapseSidebar()}><img className="logoSide" src={logo} alt='...'/></button>
         <Menu style={{marginTop: '30vh'}}
         renderMenuItemStyles={({ level }) => ({
@@ -37,14 +47,14 @@ const choose = () => {
         })}
         >
          <MenuItem routerLink={<Link to="/homepage" />} icon={<TiHome className='navIcon'/>}>Home</MenuItem>
-          <SubMenu icon={<TbCalendarTime className='navIcon' />} label="Agendamentos" >
-            <MenuItem routerLink={<Link to="/addproduct" />}> Todos </MenuItem>
-            <MenuItem> Pendentes </MenuItem>
-          </SubMenu>
+          <MenuItem routerLink={<Link to="/addproduct" />} icon={<TbCalendarTime className='navIcon' />} > Agendamentos </MenuItem>
           <MenuItem routerLink={<Link to="/addcliente" />} icon={<FaClipboardList className='navIcon2'/>}>Clientes</MenuItem>
           {choose()}
+          <div className='logout'><RiLogoutBoxRLine className='logoutIcon' onClick={logout}/></div>
         </Menu>
-    </Sidebar>
+        </div>
+        
+    </Sidebar>    
   </div>
     </>
     );

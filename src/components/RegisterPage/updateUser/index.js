@@ -18,7 +18,7 @@ const UpdateUser = (props) => {
 
     const updateUsuario = async (e) =>{     
       e.preventDefault();   
-              await fetch(`http://localhost/final/index.php`,{ 
+              await fetch(`http://3.84.115.180/dashboard/`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const UpdateUser = (props) => {
           state: 'usuario',
           idup: id
         }
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`http://3.84.115.180/dashboard/`,{
           method: "POST",
           headers: {
               'Content-Type': 'application/json',

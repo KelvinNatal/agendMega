@@ -1,19 +1,10 @@
 import { HiUserCircle } from "react-icons/hi";
-import {useNavigate} from 'react-router-dom';
 
 import './style.css'
 
 const NavLine = (props) => {
 
-    var obj = JSON.parse(sessionStorage.getItem('userData'));
-
-    const navigate = useNavigate();
-
-    const logout = () => {
-        sessionStorage.setItem("userData", '');
-        sessionStorage.clear();
-        navigate('/');
-    }    
+    var obj = JSON.parse(sessionStorage.getItem('userData')); 
 
     return (
         <>
@@ -23,7 +14,7 @@ const NavLine = (props) => {
                     <div className='TituloDiv'>
                         <h3 className='tituloPagina'>{props.name}</h3>
                     </div>                    
-                        <div className="perfilDiv d-flex" onClick={logout}>
+                        <div className="perfilDiv d-flex">
                             <HiUserCircle className='perfIcon'/>
                             <div className='descPerfil'>
                                 <p className='titlePerfil' id="subtitlePerfil">{obj.userData.username}</p>

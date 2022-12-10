@@ -21,7 +21,7 @@ const UpdateEmpresa = (props) => {
         state: 'empresa',
         idup: id
       }
-      fetch(`http://localhost/final/index.php`,{
+      fetch(`http://3.84.115.180/dashboard/`,{
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const UpdateEmpresa = (props) => {
     const updateEmpresa = async (e) =>{
       e.preventDefault();             
       
-              await fetch(`http://localhost/final/index.php`,{ 
+              await fetch(`http://3.84.115.180/dashboard/`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',

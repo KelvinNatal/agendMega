@@ -17,7 +17,7 @@ Header{
 
 
 .todoConteudo{
-    padding-top: 60px;
+    padding-top: 4rem;
     overflow-x: hidden;
     width: 100vw;
     white-space: nowrap;
@@ -209,7 +209,7 @@ Header{
 
 .conjuntoTotal{
     width: 80vw;
-    margin-left: 10vw;
+    margin-left: 12.3vw;
     position: fixed;
     min-height: 712px;
 }
@@ -552,6 +552,50 @@ Header{
     background-color: rgb(185, 5, 5);
   }
 
+  @media screen and (min-width: 2500px){
+    .conjuntoTotal{
+      margin-left: 18rem;
+    }
+  }
+
+  @media screen and (min-width: 1920px){
+    .todoConteudo{
+      padding-top: 6rem;
+    }
+
+    .dashCard{
+      height: 200px;
+    }
+
+    #firstCard::before {
+      width: 18.7vw;
+      height: 200px;
+    }
+    #secondCard::before {
+      width: 18.7vw;
+      height: 200px;
+    }
+    #thirdCard::before {
+      width: 18.7vw;
+      height: 200px;
+    }
+    #lastCard::before {
+      width: 18.5vw;
+      height: 200px;
+    }
+
+    .tituloCard{
+      margin-top: 90px;
+      margin-right: 20px;
+      font-size: 20pt;
+    }
+
+    .subtitleCard{
+      font-size: 19pt;
+    }
+
+  }
+
   @media screen and (max-height: 850px){
     .btnAnd{
       height: 35px;
@@ -642,6 +686,10 @@ Header{
       font-size: 8pt;
       margin-bottom: -15px;
     }
+
+    .todoConteudo{
+      padding-top: 4rem;
+    }
   }
 
   @media screen and (max-width: 1460px){
@@ -662,24 +710,6 @@ Header{
 
   }
 
-  @media screen and (max-width: 1366px){
-
-    .buttonAnd{
-      margin-top: 3.1rem;
-      height: 5vh;
-    }
-
-    .andSelect{
-      margin-top: 0.5rem;
-    }
-  
-    .statSelect{
-      margin-top: 0.5rem;
-      margin-bottom: 0rem;
-    }
-
-  }
-
   @media screen and (max-width: 1360px){
     .filtroDivDash{
         display: flex;
@@ -692,6 +722,19 @@ Header{
         margin-right: 1px;
     }
 
+    .andSelect{
+      margin-top: 0.5rem;
+    }
+  
+    .statSelect{
+      margin-top: 0.5rem;
+      margin-bottom: 0rem;
+    }
+    .buttonAnd{
+      margin-top: 3.1rem;
+      height: 5vh;
+    }
+
   }
 
   @media screen and (max-width: 1280px){
@@ -702,6 +745,17 @@ Header{
     }
     .andamentoDiv{        
         width: 17.5vw;
+    }
+
+    .andSelect{
+      margin-top: 1rem;
+    }
+  
+    .statSelect{
+      margin-top: 1rem;
+    }
+    .buttonAnd{
+      margin-top: 4rem;
     }
 
   }

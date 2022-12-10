@@ -20,8 +20,8 @@ const Body = () => {
     });      
 
     const handleEmp = (e) => {
-      var select = document. getElementById("empSel");
-      var opcaoTexto = select. options[select. selectedIndex]. text;
+      var select = document.getElementById("empSel");
+      var opcaoTexto = select.options[select.selectedIndex].text;
       setStat(opcaoTexto);
     }    
 
@@ -40,7 +40,7 @@ const Body = () => {
         cargo: obj.userData.cargo,
         state: 'agendamentos'
       }     
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`http://3.84.115.180/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Body = () => {
 
     const updateState = async (e) =>{ 
         e.preventDefault();        
-                await fetch(`http://localhost/final/index.php`,{ 
+                await fetch(`http://3.84.115.180/dashboard/`,{ 
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',

@@ -6,6 +6,10 @@ import { useEffect, useState } from 'react';
 const Register = () => {
 
     const [user, setUser] = useState({username: '', password: ''});
+    const [status, setStatus] = useState({
+        erro: false,
+        message: ''
+    });
 
     const navigate = useNavigate();  
 
@@ -14,7 +18,7 @@ const Register = () => {
 
     const loginn = () => {
         if(user.username !== '' && user.password !== ''){
-        fetch(`http://localhost/final/index.php`,{
+        fetch(`http://3.84.115.180/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -29,10 +33,13 @@ const Register = () => {
                     sessionStorage.setItem('userData', JSON.stringify(responseJson));
                     navigate('/homepage');
                 }else{
-                    console.log('Login error');
+                    setStatus({erro: true,
+                               message: 'Nome de usuário e/ou senha incorretos.'});
                 }
             }).catch((error)=>{                
-                console.log(error)
+                setStatus({erro: true,
+                           message: "Erro de conexão com o servidor"
+                })
             })      
         }            
     }
@@ -67,6 +74,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
+                <div className={status.erro === true ? 'error' : 'none' }>{status.message}</div>
             </div>
         </>
     );

@@ -50,9 +50,25 @@
     z-index: 1;
 }
 
-
-
 .buttonSide{
     background-color: rgba(0,0,0,0.0);
     border: none;
+}
+
+.logout{    
+    position: absolute;
+    padding: 10px 25px;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.logout:hover, .logoutIcon:hover{
+    background-color: #494949;
+    color: rgb(255, 0, 0);
+}
+
+.logoutIcon{
+    width: 30px;
+    height: 30px;
+    color: white;  
 }
