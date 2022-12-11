@@ -58,14 +58,13 @@ const ClienteP = () => {
     const inputRamais= (e) => {
       let ramais = document.getElementById('ramais').value;
       let licencas = document.getElementById('licencas').value;
-      let rali = `${ramais}R ${licencas}L`
+      let rali = `${ramais}R ${licencas}L`;
       setProduct({...product, 'ramais': rali});
   } 
 
     const inputValue = (e) => {
         let valor = e.target.value;
-        setProduct({...product, [e.target.name]: valor});    
-        console.log(product)   
+        setProduct({...product, [e.target.name]: valor});     
     }   
 
     const inputD = () => {
@@ -130,7 +129,8 @@ const ClienteP = () => {
             })                
     }  
 
-    const cadProduct = async () =>{          
+    const cadProduct = async (e) =>{    
+      e.preventDefault();  
             await fetch("https://agendamentop.site/dashboard/",{ 
             method: "POST",
             headers: {
@@ -141,7 +141,7 @@ const ClienteP = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-                //console.log(responseJson);
+                navigate('/addproduct');
             }).catch((err)=>{                
                 console.log(err);
             })                         

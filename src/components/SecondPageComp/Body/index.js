@@ -108,8 +108,7 @@ const Body = () => {
         dataInicial: dataI,
         dataFinal: dataF,
         state: 'filter'
-      }     
-      
+      }  
         fetch(`https://agendamentop.site/dashboard/`,{
             method: "POST",
             headers: {
@@ -169,7 +168,7 @@ const Body = () => {
       .then((response) => response.json())
       .then((responseJson) =>{
         //console.log(responseJson)
-        window.location.reload();      
+       navigate('/addproduct');      
       })
     }
 
@@ -236,14 +235,12 @@ const Body = () => {
     const [value, setValue] = useState("");
 
     const onChange = (e) => {     
-      
       setValue(e.target.value);
         
      };
 
     const onSearch = (searchTerm) => {
       setValue(searchTerm);
-      // our api to fetch the search result
       let valor = searchTerm;
       setProduct({...product, state: 'criarAgendamento','nomeEmpresa': valor}); 
     };
@@ -270,7 +267,7 @@ const Body = () => {
         <div className='dataHora' >
             <div className="item">
                 <p>Data/Horário</p>
-                <input type="date" name="data" id="dateCalendar" onChange={inputD}required/>
+                <input type="date" name="data" id="dateCalendar" onChange={inputD} required/>
                 <select id="horario" name="horario" onChange={inputValue}>
                     <option value="">Horário</option>
                     <option value="09:00">09:00</option>

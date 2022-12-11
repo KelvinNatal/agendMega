@@ -802,6 +802,11 @@ display: block;
   z-index: 2;
 }
 
+.dropdown:hover {
+  background-color: #b6b5b5;;
+  color: black;
+}
+
 .dropdown:empty {
   border: none;
 }

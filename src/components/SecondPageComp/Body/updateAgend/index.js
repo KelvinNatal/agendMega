@@ -87,7 +87,7 @@ const UpdateAgend = (props) => {
         <div className='dataHora' >
             <div className="item">
                 <p>Data/Horário</p>
-                <input type="date" name="data" id="dateCalend"  required onChange={handleChange} value={input.data}/>
+                <input type="date" name="data" id="dateCalend" onChange={handleChange} value={input.data} required/>
                 <FaCalendarAlt className="calendarIconAgend" id="calendarIA"/>
                 <select id="horario" name="horario" onChange={handleChange} value={input.horario}>
                     <option value="">Horário</option>

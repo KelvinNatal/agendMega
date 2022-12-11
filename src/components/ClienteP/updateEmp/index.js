@@ -104,7 +104,7 @@ const UpdateEmpresa = (props) => {
     const updateEmpresa = async (e) =>{
       e.preventDefault();             
       
-              await fetch(`http://107.23.232.93/`,{ 
+              await fetch(`https://agendamentop.site/dashboard/`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
