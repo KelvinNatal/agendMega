@@ -144,7 +144,7 @@ const Body = () => {
                     message: responseJson.message
                 })
              }else{
-              window.location.reload(); 
+                navigate('/homepage') 
              }
             }).catch((err)=>{                
                 console.log(err);
@@ -168,8 +168,7 @@ const Body = () => {
       .then((response) => response.json())
       .then((responseJson) =>{
         //console.log(responseJson)
-      window.location.reload();
-       navigate('/addproduct');      
+       navigate('/');      
       })
     }
 
