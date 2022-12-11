@@ -168,6 +168,7 @@ const Body = () => {
       .then((response) => response.json())
       .then((responseJson) =>{
         //console.log(responseJson)
+      window.location.reload();
        navigate('/addproduct');      
       })
     }
