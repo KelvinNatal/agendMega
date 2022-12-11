@@ -20,7 +20,7 @@ const UpdateAgend = (props) => {
       const user = {
           state: 'usuarios'
       }
-      await fetch("http://107.23.232.93/dashboard/", {
+      await fetch("https://agendamentop.site/dashboard/", {
           method: "POST",
           headers: {
               'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const UpdateAgend = (props) => {
 
     const updateProduct = async (e) =>{ 
         e.preventDefault();        
-              await fetch(`http://107.23.232.93/dashboard/`,{ 
+              await fetch(`https://agendamentop.site/dashboard/`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const UpdateAgend = (props) => {
             state: "agendamento",
             idup: id
         }   
-        fetch(`http://107.23.232.93/dashboard/`,{
+        fetch(`https://agendamentop.site/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

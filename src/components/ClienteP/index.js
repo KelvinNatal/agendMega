@@ -88,7 +88,7 @@ const ClienteP = () => {
       const input = {
         state: 'empresas'
       } 
-        fetch(`http://107.23.232.93/dashboard/`,{
+        fetch(`https://agendamentop.site/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ const ClienteP = () => {
         state: 'filterEmp'
       }     
       e.preventDefault();
-        fetch(`http://107.23.232.93/dashboard/`,{
+        fetch(`https://agendamentop.site/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ const ClienteP = () => {
     }  
 
     const cadProduct = async () =>{          
-            await fetch("http://107.23.232.93/dashboard/",{ 
+            await fetch("https://agendamentop.site/dashboard/",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ const ClienteP = () => {
         state: 'delempresa',
         type: 0
       }
-      await fetch(`http://107.23.232.93/dashboard/`,{     
+      await fetch(`https://agendamentop.site/dashboard/`,{     
         method: 'PUT',      
         headers: {
           'Content-Type': 'application/json',

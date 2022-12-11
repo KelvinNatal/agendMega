@@ -38,7 +38,7 @@ const Register = () => {
         const user = {
             state: 'usuarios'
         }
-        await fetch("http://107.23.232.93/dashboard/", {
+        await fetch("https://agendamentop.site/dashboard/", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const Register = () => {
     };
 
     const cadUsuario = async () =>{              
-            await fetch("http://107.23.232.93/dashboard/",{ 
+            await fetch("https://agendamentop.site/dashboard/",{ 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Register = () => {
             state: 'delUser',
             type: 0
         }
-        await fetch(`http://107.23.232.93/dashboard/`,{
+        await fetch(`https://agendamentop.site/dashboard/`,{
             method: 'PUT',      
             headers: {
               'Content-Type': 'application/json',

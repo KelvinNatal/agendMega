@@ -18,7 +18,7 @@ const UpdateUser = (props) => {
 
     const updateUsuario = async (e) =>{     
       e.preventDefault();   
-              await fetch(`http://107.23.232.93/dashboard/`,{ 
+              await fetch(`https://agendamentop.site/dashboard/`,{ 
               method: "PUT",
               headers: {
                   'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const UpdateUser = (props) => {
           state: 'usuario',
           idup: id
         }
-        fetch(`http://107.23.232.93/dashboard/`,{
+        fetch(`https://agendamentop.site/dashboard/`,{
           method: "POST",
           headers: {
               'Content-Type': 'application/json',

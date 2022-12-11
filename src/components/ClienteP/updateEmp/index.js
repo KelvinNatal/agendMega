@@ -21,7 +21,7 @@ const UpdateEmpresa = (props) => {
         state: 'empresa',
         idup: id
       }
-      fetch(`http://107.23.232.93/dashboard`,{
+      fetch(`https://agendamentop.site/dashboard/`,{
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
