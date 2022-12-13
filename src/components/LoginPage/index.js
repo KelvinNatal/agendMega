@@ -18,7 +18,7 @@ const Register = () => {
 
     const loginn = () => {
         if(user.username !== '' && user.password !== ''){
-        fetch(`https://localhost/final/index.php`,{
+        fetch(`https://agendamentop.site/dashboard/`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
