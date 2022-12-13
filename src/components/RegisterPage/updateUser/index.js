@@ -59,7 +59,6 @@ const UpdateUser = (props) => {
         <>
         <div className="corpoPaginaUser">
         <div className="corpoUpdateUser">
-        <form onSubmit={updateUsuario}>
         <div className='dataHora' >
         </div>
         <div className="item">
@@ -79,9 +78,8 @@ const UpdateUser = (props) => {
         </div>
         <div className="btn-div">
           <Link to="/register"><button className="botaoVoltar">Cancelar</button></Link>
-          <button type="submit" className="botaoAlterar">Cadastrar</button>
+          <button onClick={updateUsuario} className="botaoAlterar">Cadastrar</button>
         </div>   
-        </form>
     </div>
     </div>
         </>

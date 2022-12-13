@@ -122,7 +122,6 @@ const Register = () => {
                 <Modal.Title>Criar Usuário</Modal.Title>
              </Modal.Header>
             <Modal.Body className="modd">
-            <form onSubmit={cadUsuario}>
         <div className='dataHora' >
         </div>
         <div className="item">
@@ -143,9 +142,8 @@ const Register = () => {
         </div>
         <div className="btn-div">
           <button onClick={handleClose} className="botaoVoltar">Cancelar</button>
-          <button type="submit" className="botaoAlterar">Cadastrar</button>
+          <button onClick={cadUsuario} className="botaoAlterar">Cadastrar</button>
         </div>   
-        </form>
     </Modal.Body>
             </Modal>
                         <div className='d-flex CardsU'>

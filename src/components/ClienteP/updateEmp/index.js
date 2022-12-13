@@ -125,7 +125,7 @@ const UpdateEmpresa = (props) => {
         <>
         <div className="corpoPaginaEmp">
         <div className="corpoUpdateEmp">
-        <form id="product_form" onSubmit={updateEmpresa}>
+        <div id="product_form">
         <div className='dataHora' >
             <div className="item">
                 <p>Data</p>
@@ -185,9 +185,9 @@ const UpdateEmpresa = (props) => {
         </div>
         <div className="btn-div">
           <Link to="/addcliente"><button className="botaoVoltar">Cancelar</button></Link>
-          <button type="submit" className="botaoAlterar">Alterar</button>
+          <button onClick={updateEmpresa} className="botaoAlterar">Alterar</button>
         </div>    
-      </form>
+      </div>
     </div>
     </div>
         </>

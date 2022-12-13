@@ -216,7 +216,7 @@ const ClienteP = () => {
              </Modal.Header>
             <Modal.Body className="modd">
             <div className="">
-            <form id="product_form" onSubmit={cadProduct}>
+            <div id="product_form">
         <div className='dataHora' >
             <div className="item">
                 <p>Data</p>
@@ -274,9 +274,9 @@ const ClienteP = () => {
         </div>
         <div className="btn-div">
           <button onClick={handleClose} className="botaoVoltar">Cancelar</button>
-          <button type="submit" className="botaoAlterar">Criar</button>
+          <button onClick={cadProduct} className="botaoAlterar">Criar</button>
         </div>    
-        </form>
+        </div>
     </div>
             </Modal.Body>
             </Modal>
