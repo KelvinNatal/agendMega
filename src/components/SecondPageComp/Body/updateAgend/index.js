@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaCalendarAlt } from "react-icons/fa";
 import './style.css'
 const UpdateAgend = (props) => { 
@@ -127,8 +127,9 @@ const UpdateAgend = (props) => {
         </div>
         <h4>Observação</h4>
         <textarea rows="4" name="observacao" onChange={handleChange} value={input.observacao}></textarea>
-        <div className="btn-block">
-          <button type="submit" className="botaoForm">Alterar</button>
+        <div className="btn-div">
+          <Link to="/addproduct"><button className="botaoVoltar">Cancelar</button></Link>
+          <button type="submit" className="botaoAlterar">Alterar</button>
         </div>    
         </form>
     </div>

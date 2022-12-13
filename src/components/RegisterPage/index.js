@@ -141,9 +141,10 @@ const Register = () => {
               <option value="Analista">Analista</option>
             </select>
         </div>
-        <div className="btn-block">
-          <button type='submit' className="botaoForm">Cadastrar</button>
-        </div>    
+        <div className="btn-div">
+          <button onClick={handleClose} className="botaoVoltar">Cancelar</button>
+          <button type="submit" className="botaoAlterar">Cadastrar</button>
+        </div>   
         </form>
     </Modal.Body>
             </Modal>

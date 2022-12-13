@@ -641,15 +641,28 @@ Header{
   }  
   }
 
-  @media screen and (max-height: 800px){
+  @media screen and (max-height: 880px){
     .buttonAnd{
       height: 35px;
       font-size: 10pt;
       margin-top: 3.5rem;
     }
+    .andSelect{
+      width: 85%;
+      height: 35px;
+      font-size: 8pt;
+      margin-bottom: 2px;
+    }
+  
+    .statSelect{
+      width: 85%;
+      height: 35px;
+      font-size: 8pt;
+      margin-bottom: 0px;
+    }
   }
 
-  @media screen and (max-height: 768px){
+  @media screen and (max-height: 780px){
     .filtroDivDash{
         height: 28.5vh;
         margin-right: 1px;

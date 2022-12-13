@@ -549,7 +549,7 @@ display: block;
   }
   .btn-block {
   margin-top: 20px;
-  text-align: center;
+  text-align: right;
   }
   @media (min-width: 568px) {
   input {

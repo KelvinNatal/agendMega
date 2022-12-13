@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import './style.css';
 
 const UpdateUser = (props) => { 
@@ -77,9 +77,10 @@ const UpdateUser = (props) => {
               <option value="Analista">Analista</option>
             </select>
         </div>
-        <div className="btn-block">
-          <button type="submit" className="botaoFormUser">Cadastrar</button>
-        </div>    
+        <div className="btn-div">
+          <Link to="/register"><button className="botaoVoltar">Cancelar</button></Link>
+          <button type="submit" className="botaoAlterar">Cadastrar</button>
+        </div>   
         </form>
     </div>
     </div>

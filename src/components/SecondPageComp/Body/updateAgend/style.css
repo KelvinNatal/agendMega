@@ -16,4 +16,43 @@
     z-index: 2;
     cursor: pointer;
     background-image: none;
-    }
+  }
+
+  .btn-div{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+
+  .botaoVoltar{
+    width: 150px;
+    background: rgb(231, 17, 17);
+    height: 5vh;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    border: none;
+    margin-right: 5px;
+  }
+  .botaoVoltar:hover{
+    background: rgb(255, 46, 46);
+    border: 1px solid rgb(34, 34, 34)
+  }
+
+  .botaoAlterar{
+    width: 150px;
+    background: rgb(41, 41, 248);
+    height: 5vh;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    border: none;
+  }
+
+  .botaoAlterar:hover{
+    background: rgb(70, 70, 247);
+    border: 1px solid rgb(34, 34, 34)
+  }
+  

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaCalendarAlt } from "react-icons/fa";
 import MultiSelect from  'react-multiple-select-dropdown-lite'
 
@@ -183,8 +183,9 @@ const UpdateEmpresa = (props) => {
           <p>Link</p>
           <input type="text" name="link" onChange={handleChange} value={input.link} />
         </div>
-        <div className="btn-block">
-          <button type="submit" className="botaoForm" href="/">Salvar</button>
+        <div className="btn-div">
+          <Link to="/addcliente"><button className="botaoVoltar">Cancelar</button></Link>
+          <button type="submit" className="botaoAlterar">Alterar</button>
         </div>    
       </form>
     </div>

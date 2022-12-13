@@ -272,8 +272,9 @@ const ClienteP = () => {
           <p>Link</p>
           <input type="text" name="link" onChange={inputValue} />
         </div>
-        <div className="btn-block">
-          <button type="submit" className="botaoForm" href="/">Salvar</button>
+        <div className="btn-div">
+          <button onClick={handleClose} className="botaoVoltar">Cancelar</button>
+          <button type="submit" className="botaoAlterar">Criar</button>
         </div>    
         </form>
     </div>

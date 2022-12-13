@@ -334,9 +334,10 @@ const Body = () => {
         </div>
         <h4>Observação</h4>
         <textarea rows="4" name="observacao" onChange={inputValue}></textarea>
-        <div className="btn-block">
-          <button onClick={cadProduct} className="botaoForm">Agendar</button>
-        </div>    
+        <div className="btn-div">
+          <button onClick={handleClose} className="botaoVoltar">Cancelar</button>
+          <button onClick={cadProduct} className="botaoAlterar">Agendar</button>
+        </div>     
     </div>
             </Modal.Body>
             </Modal>
