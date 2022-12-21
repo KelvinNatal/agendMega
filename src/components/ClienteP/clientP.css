@@ -261,7 +261,6 @@ display: block;
   filter: blur(20px);
 }
 
-
 .filtroDiv{
   width: 17vw;
   float: left;
@@ -617,12 +616,13 @@ display: block;
 
 
 .tudoCard{
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .cabecalhoCard{
-  width: 65.8%;
+  width: 100%;
   height: 38px;
   position: relative;
   margin-left: 4px; 
@@ -630,7 +630,7 @@ display: block;
 }
 
 .agendCard{
-  width: 65.8%;
+  width: 100%;
   height:60px;
   margin-left: 4px;  
   position: relative;
@@ -741,7 +741,7 @@ display: block;
   height: 100%;
   background-color: #ececec;
   margin-right: 9px;
-  border-radius: 6px;
+  border-radius: 10px;
   padding-left: 5px;
   padding-bottom: 5px;
   border: none;
@@ -777,4 +777,22 @@ display: block;
 #bt3:hover{
   background: rgb(0, 0, 0);
 }
+
+.error{
+  display: flex;
+  position: absolute;
+  bottom: 1;
+  font-weight: bold;
+  margin-top: 30rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  padding: 1rem 1.8rem;
+  background-color: rgb(231, 49, 49);
+  color: white;
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-left{0%{transform:translateX(0)}100%{transform:translateX(-20px)}}
+
 

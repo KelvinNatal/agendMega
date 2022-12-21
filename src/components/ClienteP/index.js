@@ -7,7 +7,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { TiFilter } from "react-icons/ti";
 import { FaTrashAlt } from "react-icons/fa";
 import { GoPencil } from "react-icons/go";
-import MultiSelect from  'react-multiple-select-dropdown-lite'
+import MultiSelect from  'react-multiple-select-dropdown-lite';
 
 const ClienteP = () => {
 
@@ -17,6 +17,10 @@ const ClienteP = () => {
     const [fullscreen, setFullscreen] = useState(true);
     const [products, setProducts] = useState([]);    
     const [vall, setvall] = useState('');
+    const [error, setError] = useState({
+      erro: false,
+      message: ''
+    });
     const [product, setProduct] = useState({
       nomeEmpresa: '',
       cliente: '',
@@ -141,7 +145,18 @@ const ClienteP = () => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-                navigate('/addproduct');
+              console.log(responseJson.erro);
+              if(!responseJson.erro){
+                setError({
+                  erro: false,
+                  message: ''
+                })
+                return navigate('/addproduct');
+              }
+              setError({
+                erro: true,
+                message: 'Essa empresa ja existe.'
+              })
             }).catch((err)=>{                
                 console.log(err);
             })                         
@@ -216,6 +231,7 @@ const ClienteP = () => {
              </Modal.Header>
             <Modal.Body className="modd">
             <div className="">
+            <div className={error.erro === true ? 'error' : '' }>{error.message}</div>            
             <div id="product_form">
         <div className='dataHora' >
             <div className="item">

@@ -74,7 +74,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
-                <div className={status.erro === true ? 'error' : 'none' }>{status.message}</div>
+                <div className={status.erro === true ? 'error' : '' }>{status.message}</div>
             </div>
         </>
     );

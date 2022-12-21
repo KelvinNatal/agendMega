@@ -381,6 +381,7 @@ const Body = () => {
                             <div className="obsDivAgend">
                             {produc.observacao}
                             </div>
+                            
                             <div className="opcoesDivAgend">
                                 <div className="opcButtonsAgend d-flex">
                                 <Link to={`/addproduct/${produc.id}/editagend`}>
@@ -396,6 +397,7 @@ const Body = () => {
                       </div>
                     )
                 }
+                
                       </div>                      
                       </div>                      
                       <div className='filtroDiv'>

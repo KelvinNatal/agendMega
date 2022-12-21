@@ -611,7 +611,7 @@ display: block;
 }
 
 .agendCardAgend{
-  width: 99.5%;
+  width: 100%;
   height:60px; 
   border-radius: 8px;
   margin-top: 5px;
@@ -717,7 +717,7 @@ display: block;
   height: 100%;
   background-color: #ececec;
   margin-right: 9px;
-  border-radius: 6px;
+  border-radius: 10px;
   padding-left: 5px;
   padding-bottom: 5px;
   border: none;
