@@ -94,8 +94,7 @@ const Body = () => {
                 }).catch((err)=>{                
                   console.log(err);
                 })                                                 
-      }
-    
+      }    
 
     useEffect(() => {
         if(sessionStorage.getItem('userData') !== null){            
@@ -206,8 +205,8 @@ const Body = () => {
                           </div>
                         </div>                                              
                     </div>
-                    <div className='andamentoDiv'>
-                        <div className="containerAnalistasAnd"/>                        
+                    <div className='andamentoDiv'> 
+                      <div className='conteudoAnamentoDiv'>                  
                           <div className='btnAnd'>
                               <p>Andamento</p>
                          </div>
@@ -229,7 +228,8 @@ const Body = () => {
                             <div className='buttonAndDiv'>
                               <button className="buttonAnd" onClick={updateState}>Alterar Status</button>
                             </div>
-                        </div>                       
+                        </div>  
+                        </div>                      
                     </div>
                     </div>
                     </div>

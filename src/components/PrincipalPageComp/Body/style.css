@@ -342,11 +342,12 @@ Header{
   }
 
   .andamentoDiv{
+    display: flex;
+    flex-direction: column;
     width: 18.3vw;
     height: 260px;
     float: right;
     background-color: #fff;
-    margin: 0 auto;
     margin-top: 1vh;
     margin-left: 28px;
     overflow-y: scroll;
@@ -354,6 +355,13 @@ Header{
     border-radius: 10px;
   }
 
+  .conteudoAnamentoDiv{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 18.5%;
+    height: 18%;
+  }
   .btnAnd{  
     width: 85%;
     height: 40px;
@@ -401,12 +409,16 @@ Header{
   }
 
   .containerAnalistasAnd{
+    display: flex;
+    flex-direction: column;
     background-color: rgba(187, 0, 0, 0.404);
     border-radius: 0px;
     width: 18.3vw;
   }
 
   .andContent{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin-left: 2.5px;
   }
@@ -417,6 +429,7 @@ Header{
   }
 
   .andSelect{
+    display: flex;
     width: 85%;
     margin: 0 1.2vw;
     margin-top: 20px;
@@ -427,6 +440,7 @@ Header{
   }
 
   .statSelect{
+    display: flex;
     width: 85%;
     margin: 0 1.2vw;
     border-radius: 10px;

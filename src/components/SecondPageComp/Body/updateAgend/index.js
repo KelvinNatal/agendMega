@@ -5,7 +5,7 @@ import './style.css'
 const UpdateAgend = (props) => { 
 
     const {id} = useParams();
-    const[input, setInput] = useState([]);   
+    const [input, setInput] = useState([]);   
     const [users, setUsers] = useState([]);
     
     const navigate = useNavigate();
