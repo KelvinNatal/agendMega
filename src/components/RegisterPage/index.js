@@ -65,6 +65,7 @@ const Register = () => {
             .then((response) => response.json())
             .then((responseJson) => {
                 //console.log(responseJson);
+                navigate('/homepage')
             }).catch((err)=>{                
                 console.log(err);
             })                            

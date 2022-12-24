@@ -35,6 +35,9 @@
 }
 
 .CardsU{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 38px;
 }
 

@@ -737,7 +737,7 @@ Header{
 
   }
 
-  @media screen and (max-width: 1360px){
+  @media screen and (max-width: 1370px){
     .filtroDivDash{
         display: flex;
         flex-direction: column;
